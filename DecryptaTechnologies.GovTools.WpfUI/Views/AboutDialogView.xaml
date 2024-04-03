@@ -10,7 +10,7 @@
              mc:Ignorable="d" 
              Title="{i18n:Translate About.Title, Default='About'}"
              ResizeMode="NoResize"
-             Height="550" Width="1100" Background="{StaticResource AppBg}">
+             Height="550" Width="1100" WindowStartupLocation="CenterScreen" Background="{StaticResource AppBg}">
 
 
     <Grid Margin="12">

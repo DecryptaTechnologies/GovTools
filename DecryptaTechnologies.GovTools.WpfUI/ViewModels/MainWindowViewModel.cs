@@ -91,6 +91,12 @@ public partial class MainWindowViewModel : HostScreenViewModelBase,
     public void OpenWordlistFolder()
     {
         Process.Start("explorer.exe", _govTools.GetWordlistDirectory());
+    } 
+    
+    [RelayCommand]
+    public void OpenGovCrackerURL()
+    {
+        Process.Start(new ProcessStartInfo("https://govcracker.com") { UseShellExecute = true });
     }
 
     public async override Task ActivateAsync()

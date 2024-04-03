@@ -81,7 +81,8 @@
                 </Menu>
                 <Menu Background="Transparent" Foreground="White">
                     <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="{i18n:Translate MainForm.Help, Default='Help'}" Foreground="White" Background="{StaticResource ToolBarBg}">
-                        <MenuItem Command="{Binding OpenAboutDialogCommand}" Style="{StaticResource MenuItemStyle}" Header="{i18n:Translate MainForm.Infos, Default='Help'}" Background="{StaticResource ToolBarBg}" />
+                        <MenuItem Command="{Binding OpenGovCrackerURLCommand}" Style="{StaticResource MenuItemStyle}" Header="{i18n:Translate MainForm.Help, Default='Help'}" Background="{StaticResource ToolBarBg}" />
+                        <MenuItem Command="{Binding OpenAboutDialogCommand}" Style="{StaticResource MenuItemStyle}" Header="{i18n:Translate MainForm.Infos, Default='About'}" Background="{StaticResource ToolBarBg}" />
                     </MenuItem>
                 </Menu>
             </ToolBar>
