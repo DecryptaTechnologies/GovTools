@@ -24,7 +24,7 @@ public class DogeWalletExtractor : ExtractorBase,
 
     public override string? ImageUrl => "/Resources/extractor-dogecoin.png";
 
-    public override string Hint => $"{_translator.Translate("Extractors.Bitcoin")}";
+    public override string Hint => $"{_translator.Translate("Extractors.Dogecoin")}";
 
 
     string _selectedFile;

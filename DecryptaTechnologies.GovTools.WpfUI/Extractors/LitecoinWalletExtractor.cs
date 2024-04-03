@@ -24,7 +24,7 @@ public class LitecoinWalletExtractor : ExtractorBase,
 
     public override string? ImageUrl => "/Resources/extractor-litecoin.png";
 
-    public override string Hint => $"{_translator.Translate("Extractors.Bitcoin")}";
+    public override string Hint => $"{_translator.Translate("Extractors.Litecoin")}";
 
 
     string _selectedFilePath;
