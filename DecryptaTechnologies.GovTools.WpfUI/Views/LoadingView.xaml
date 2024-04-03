@@ -12,7 +12,7 @@
 
             <DockPanel LastChildFill="False" Margin="0 0.6cm 0 0">
                 <TextBlock FontSize="19" Text="powered by Decrypta Technologies" Foreground="White" Margin="16 0 0 0" />
-                <TextBlock DockPanel.Dock="Right" FontSize="14" Text="{Binding VersionText, FallbackValue=1.2.3.4}" Foreground="White" Margin="0 0 52 0" />
+                <!--<TextBlock DockPanel.Dock="Right" FontSize="14" Text="{Binding VersionText, FallbackValue=1.2.3.4}" Foreground="White" Margin="0 0 52 0" />-->
             </DockPanel>
 
             <ProgressBar Value="{Binding Progress}" Maximum="100" Margin="0 1cm 0 0" Height="34" Foreground="#1AB188" Background="Transparent" BorderThickness="1" BorderBrush="White" />
