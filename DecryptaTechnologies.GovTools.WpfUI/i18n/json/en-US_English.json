@@ -14,7 +14,7 @@
     "FileOrFolder": "Select file or folder",
     "FileFolder": "File / Folder:",
     "Help": "Help",
-    "Infos": "Notes",
+    "Infos": "Legal information",
     "Extraction": "Extraction of password hashes",
     "ExtractionText": "Extract password hashes from various files or folders for GovCracker.",
     "SelectExtractor": "Select Extractor",

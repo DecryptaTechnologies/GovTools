@@ -14,7 +14,7 @@
     "FileOrFolder": "Sélectionner un fichier ou un dossier",
     "FileFolder": "Fichier / dossier :",
     "Help": "Aide",
-    "Infos": "Notes",
+    "Infos": "Informations légales",
     "Extraction": "Extraction du hachage du mot de passe",
     "ExtractionText": "Extraire les hashs de mots de passe de différents fichiers ou dossiers pour GovCracker",
     "SelectExtractor": "Sélectionner un extracteur",
