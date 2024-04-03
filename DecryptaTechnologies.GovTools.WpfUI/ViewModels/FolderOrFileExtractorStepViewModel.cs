@@ -21,6 +21,9 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
     bool _isFolderSelectionEnabled;
 
     [ObservableProperty]
+    string _initialDirectory;
+
+    [ObservableProperty]
     string _filter;
 
     public FolderOrFileExtractorStepViewModel(
@@ -34,6 +37,7 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
         _isFileSelectionEnabled = isFileSelectionEnabled;
         _isFolderSelectionEnabled = isFolderSelectionEnabled;
         _filter = filter;
+        _initialDirectory = "";
     }
 
     [RelayCommand]
@@ -41,7 +45,7 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
     {
         var ofd = new OpenFileDialog();
         ofd.Filter = Filter;
-        ofd.InitialDirectory = AppContext.BaseDirectory;
+        ofd.InitialDirectory = string.IsNullOrEmpty(InitialDirectory) ? AppContext.BaseDirectory : InitialDirectory;
         var result = ofd.ShowDialog();
         if (result != true)
             return;
@@ -59,6 +63,7 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
     public void SelectFolder()
     {
         var ofd = new OpenFolderDialog();
+        ofd.InitialDirectory = string.IsNullOrEmpty(InitialDirectory) ? AppContext.BaseDirectory : InitialDirectory;
         var result = ofd.ShowDialog();
         if (result != true)
             return;

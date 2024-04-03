@@ -40,6 +40,7 @@ public class ExodusWalletExtractor : ExtractorBase,
     public override List<IExtractorStepViewModel> GetRequiredScreens()
     {
         var folderOrFileExtractorStepViewModel = App.Container.Resolve<FolderOrFileExtractorStepViewModel>();
+        folderOrFileExtractorStepViewModel.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         folderOrFileExtractorStepViewModel.FileSelected += This_FileSelected;
         return [
             folderOrFileExtractorStepViewModel,

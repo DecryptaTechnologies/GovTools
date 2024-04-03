@@ -40,6 +40,7 @@ public class MozillaFirefoxMasterPasswordExtractor : ExtractorBase,
     public override List<IExtractorStepViewModel> GetRequiredScreens()
     {
         var folderOrFileExtractorStepViewModel = App.Container.Resolve<FolderOrFileExtractorStepViewModel>();
+        folderOrFileExtractorStepViewModel.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         folderOrFileExtractorStepViewModel.Filter = "DB Files (*.db)| *.db";
         folderOrFileExtractorStepViewModel.FileSelected += This_FileSelected;
         return [

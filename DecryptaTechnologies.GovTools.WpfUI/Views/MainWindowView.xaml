@@ -74,10 +74,10 @@
                     <MenuItem Header="GovCracker" Command="{Binding OpenGovCrackerCommand}" Foreground="White" />
                 </Menu>
                 <Menu Background="Transparent" Foreground="White">
-                    <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="Wordlist" Command="{Binding OpenWordlistFolderCommand}" CommandParameter="_Wordlists" Foreground="White" />
+                    <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="Hashout" Command="{Binding OpenHashoutFolderCommand}" CommandParameter="_Hashout" Foreground="White" />
                 </Menu>
                 <Menu Background="Transparent" Foreground="White">
-                    <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="Hashout" Command="{Binding OpenHashoutFolderCommand}" CommandParameter="_Hashout" Foreground="White" />
+                    <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="Wordlist" Command="{Binding OpenWordlistFolderCommand}" CommandParameter="_Wordlists" Foreground="White" />
                 </Menu>
                 <Menu Background="Transparent" Foreground="White">
                     <MenuItem Style="{StaticResource HeaderMenuItemStyle}" Header="{i18n:Translate MainForm.Help, Default='Help'}" Foreground="White" Background="{StaticResource ToolBarBg}">

@@ -30,7 +30,7 @@ public partial class GeneralSettingsSubCategoryViewModel : SettingsSubCategoryVi
 
     private void AddLanguageMenuItem()
     {
-        var langIso = _iniFile.GetString("General", "LanguageIso", "de-DE");
+        var langIso = _iniFile.GetString("General", "LanguageIso", "en-US");
         var configuredLanguage = _translator.Languages.SingleOrDefault(x => x.Iso == langIso);
         var parms = new List<Autofac.Core.Parameter>();
         if (configuredLanguage != null)

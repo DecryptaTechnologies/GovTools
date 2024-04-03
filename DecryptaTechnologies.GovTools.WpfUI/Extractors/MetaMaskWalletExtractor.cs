@@ -39,6 +39,7 @@ public class MetaMaskWalletExtractor : ExtractorBase,
     public override List<IExtractorStepViewModel> GetRequiredScreens()
     {
         var folderOrFileExtractorStepViewModel = App.Container.Resolve<FolderOrFileExtractorStepViewModel>();
+        folderOrFileExtractorStepViewModel.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         folderOrFileExtractorStepViewModel.Filter = "LDB Files (*.ldb)| *.ldb";
         folderOrFileExtractorStepViewModel.FileSelected += This_FileSelected;
         return [
