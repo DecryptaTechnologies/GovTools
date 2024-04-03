@@ -3,28 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
              xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
              xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
              d:DataContext="{d:DesignInstance vm:AboutDialogViewModel}"
              mc:Ignorable="d" 
              Title="{i18n:Translate About.Title, Default='About'}"
-             Height="600" Width="850" Background="{StaticResource AppBg}">
+             ResizeMode="NoResize"
+             Height="550" Width="1100" Background="{StaticResource AppBg}">
+
 
     <Grid Margin="12">
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        
-        <StackPanel>
-         <Image Source="/Resources/GovTools_801x187.png" Height="100" Width="350" HorizontalAlignment="Left" Margin="0 0 0 20" />
-        </StackPanel>
 
-        <TextBlock Grid.Row="1" Text="{i18n:Translate About.Text, Default='AboutText'}" FontSize="16" Height="Auto" Margin="8" TextWrapping="WrapWithOverflow" />
-        
-        <TextBlock Grid.Row="2" Text="{i18n:Translate About.LoadMessage, Default='LoadMessage'}" FontSize="12" Height="Auto" Margin="8" TextWrapping="WrapWithOverflow" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
 
+
+        <Grid Grid.Column="0" >
+            <fa:ImageAwesome Icon="Solid_CircleInfo" Width="132" Height="132" PrimaryColor="White" />
+        </Grid>
+
+        <Grid Grid.Column="1" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--<StackPanel>
+                <Image Source="/Resources/GovTools_801x187.png" Height="100" Width="350" HorizontalAlignment="Left" Margin="0 0 0 20" />
+            </StackPanel>-->
+
+            <TextBlock Grid.Row="0" Text="{i18n:Translate About.Title, Default='Title'}" FontSize="28" Height="Auto" Margin="8" TextWrapping="WrapWithOverflow" />
+            
+            <TextBlock Grid.Row="1" Text="{i18n:Translate About.Text, Default='AboutText'}" FontSize="16" Height="Auto" Margin="8" TextWrapping="WrapWithOverflow" />
+
+            <TextBlock Grid.Row="2" Text="{i18n:Translate About.LoadMessage, Default='LoadMessage'}" FontSize="12" Height="Auto" Margin="8" TextWrapping="WrapWithOverflow" />
+        </Grid>
     </Grid>
 </Window>
