@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>DecryptaTechnologies.GovTools.WpfUI</RootNamespace>
+    <PackageId>DecryptaTechnologies.GovTools.WpfUI</PackageId>
+    <AssemblyName>GovTools</AssemblyName>
+    <ApplicationIcon>Resources\GovTools_347x347.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Bitcoin.png" />
+    <None Remove="Resources\extractor-apfs.png" />
+    <None Remove="Resources\extractor-bitcoin.png" />
+    <None Remove="Resources\extractor-bitlocker.png" />
+    <None Remove="Resources\extractor-default.png" />
+    <None Remove="Resources\extractor-dogecoin.png" />
+    <None Remove="Resources\extractor-ecryptfs.png" />
+    <None Remove="Resources\extractor-electrum.png" />
+    <None Remove="Resources\extractor-exodus.png" />
+    <None Remove="Resources\extractor-firefox.png" />
+    <None Remove="Resources\extractor-iphone.png" />
+    <None Remove="Resources\extractor-keepass.png" />
+    <None Remove="Resources\extractor-linux.png" />
+    <None Remove="Resources\extractor-litecoin.png" />
+    <None Remove="Resources\extractor-luks.png" />
+    <None Remove="Resources\extractor-metamask.png" />
+    <None Remove="Resources\extractor-multibit.png" />
+    <None Remove="Resources\extractor-myether.png" />
+    <None Remove="Resources\extractor-office.png" />
+    <None Remove="Resources\extractor-openoffice.png" />
+    <None Remove="Resources\extractor-pdf.png" />
+    <None Remove="Resources\extractor-rar.png" />
+    <None Remove="Resources\extractor-sevenzip.png" />
+    <None Remove="Resources\extractor-truecrypt.png" />
+    <None Remove="Resources\extractor-veracrypt.png" />
+    <None Remove="Resources\extractor-windows-login-password.png" />
+    <None Remove="Resources\extractor-zip.png" />
+    <None Remove="Resources\flag_de-DE.png" />
+    <None Remove="Resources\flag_en-US.png" />
+    <None Remove="Resources\GovCracker_128x128.ico" />
+    <None Remove="Resources\GovCracker_347x347.png" />
+    <None Remove="Resources\GovTools_347x347.ico" />
+    <None Remove="Resources\GovTools_801x187.png" />
+    <None Remove="Resources\hashcat_image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\GovTools_347x347.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="FontAwesome6.Fonts" Version="2.5.1" />
+    <PackageReference Include="MvvmDialogs" Version="9.1.2" />
+    <PackageReference Include="rskibbe.Encryption" Version="1.0.1" />
+    <PackageReference Include="rskibbe.I18n" Version="1.0.14" />
+    <PackageReference Include="rskibbe.I18n.Json" Version="1.0.18" />
+    <PackageReference Include="rskibbe.I18n.Wpf" Version="1.0.1" />
+    <PackageReference Include="rskibbe.Ini" Version="1.6.0" />
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DecryptaTechnologies.GovTools.Domain\DecryptaTechnologies.GovTools.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\extractor-apfs.png" />
+    <Resource Include="Resources\extractor-bitcoin.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\extractor-bitlocker.png" />
+    <Resource Include="Resources\extractor-default.png" />
+    <Resource Include="Resources\extractor-dogecoin.png" />
+    <Resource Include="Resources\extractor-ecryptfs.png" />
+    <Resource Include="Resources\extractor-electrum.png" />
+    <Resource Include="Resources\extractor-exodus.png" />
+    <Resource Include="Resources\extractor-firefox.png" />
+    <Resource Include="Resources\extractor-iphone.png" />
+    <Resource Include="Resources\extractor-keepass.png" />
+    <Resource Include="Resources\extractor-linux.png" />
+    <Resource Include="Resources\extractor-litecoin.png" />
+    <Resource Include="Resources\extractor-luks.png" />
+    <Resource Include="Resources\extractor-metamask.png" />
+    <Resource Include="Resources\extractor-multibit.png" />
+    <Resource Include="Resources\extractor-myether.png" />
+    <Resource Include="Resources\extractor-office.png" />
+    <Resource Include="Resources\extractor-openoffice.png" />
+    <Resource Include="Resources\extractor-pdf.png" />
+    <Resource Include="Resources\extractor-rar.png" />
+    <Resource Include="Resources\extractor-sevenzip.png" />
+    <Resource Include="Resources\extractor-truecrypt.png" />
+    <Resource Include="Resources\extractor-windows-login-password.png" />
+    <Resource Include="Resources\extractor-zip.png" />
+    <Resource Include="Resources\flag_de-DE.png" />
+    <Resource Include="Resources\flag_en-US.png" />
+    <Resource Include="Resources\GovCracker_128x128.ico" />
+    <Resource Include="Resources\GovCracker_347x347.png" />
+    <Resource Include="Resources\GovTools_347x347.ico" />
+    <Resource Include="Resources\GovTools_801x187.png" />
+    <Resource Include="Resources\hashcat_image.png" />
+    <Resource Include="Resources\extractor-veracrypt.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ApfsAppleMacbooksExtractorInputDialogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ActivateLinuxDialogView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="i18n\json\de-DE_Deutsch.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="i18n\json\en-US_English.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="i18n\json\fr-FR_Francais.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="i18n\json\languages.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

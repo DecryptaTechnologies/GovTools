@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.ExtractorRunningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             d:DesignStyle="{StaticResource PageDefaultDesignStyle}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+            <fa:ImageAwesome Icon="Solid_Hourglass" PrimaryColor="White" Width="28" Height="28" Margin="0 0 15 0" />
+                <TextBlock Text="{i18n:Translate MainForm.ExtractionRunning, Default='running, please wait'}" TextAlignment="Center" FontSize="28" />
+            </StackPanel>
+            <ProgressBar IsIndeterminate="True" Margin="0 20 0 0" Height="20" Foreground="#1AB188" Background="Transparent" BorderThickness="1" BorderBrush="White" />
+            <Button Command="{Binding CancelCommand}" Content="{i18n:Translate MainForm.Cancel, Default='cancel'}" Margin="0 24 0 0" Padding="8 12" />
+        </StackPanel>
+    </Grid>
+</UserControl>

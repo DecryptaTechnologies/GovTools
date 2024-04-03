@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.SetupCompletedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             xmlns:u="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.Utils"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             d:DataContext="{d:DesignInstance vm:SetupCompletedViewModel}"
+             mc:Ignorable="d" d:DesignWidth="800" Height="535">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#FF5A7B19">
+            <fa:ImageAwesome Icon="Regular_CircleCheck" PrimaryColor="White" Width="172" Height="172" />
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#1F1F1F">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="0 36 0 0">
+                    <TextBlock Text="{i18n:Translate Setup.Completed.Title, Default='Setup completed'}" FontWeight="Light" FontSize="36" Margin="36 8 36 36" />
+                    <TextBlock FontSize="15" Margin="36 0" TextWrapping="Wrap" Text="{i18n:Translate Setup.Complete.TextOne, Default='Congratulations, the setup has completed successfully and you are ready to get started with GovCracker.'}" />
+                </StackPanel>
+
+                <DockPanel Grid.Row="2" LastChildFill="False" Margin="36 0 36 24">
+                    <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                        <Button Command="{Binding BackCommand}" Background="Black" Foreground="White" Padding="16 8" Margin="0 0 8 0">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="Solid_ArrowLeft" Width="12" Height="12" PrimaryColor="White" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <Button Command="{Binding ContinueCommand}" Background="Black" Foreground="White" Padding="16 8" Margin="8 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{i18n:Translate Setup.Complete.ContinueButton, Default='finish'}" Margin="0 0 8 0" />
+                                <fa:ImageAwesome Icon="Solid_Check" Width="12" Height="12" PrimaryColor="White" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

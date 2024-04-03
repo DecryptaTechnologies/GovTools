@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.SettingsSelectionMenuItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             d:DataContext="{d:DesignInstance vm:SettingsSelectionMenuItemViewModel}"
+             mc:Ignorable="d" Margin="0 12 0 0">
+
+    <Border>
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="BorderThickness" Value="2 0 0 0" />
+                <Setter Property="Padding" Value="12 0 0 0" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding BeenChanged}" Value="True">
+                        <Setter Property="BorderBrush" Value="LightGreen" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <StackPanel>
+            <TextBlock Text="{Binding Name, FallbackValue=Title}" FontWeight="Bold" Foreground="White" Margin="0 0 0 4" />
+            <TextBlock Foreground="White" Margin="0 0 0 8" Text="{Binding Description, FallbackValue=SomeLongDescription}">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsVisible}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <ComboBox ItemsSource="{Binding Items}" Style="{StaticResource ComboBoxStyle1}" SelectedItem="{Binding SelectedItem}" Width="240" HorizontalAlignment="Left" />
+        </StackPanel>
+    </Border>
+
+</UserControl>

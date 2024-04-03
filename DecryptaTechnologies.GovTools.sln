@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfUI", "DecryptaTechnologies.GovTools.WpfUI\WpfUI.csproj", "{FE7BA15F-AF15-4233-A526-D12DA69FAA3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecryptaTechnologies.GovTools.Domain", "DecryptaTechnologies.GovTools.Domain\DecryptaTechnologies.GovTools.Domain.csproj", "{6D7AA928-FB26-4B5D-978F-1D32930AA718}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0BC1C19-30B9-433C-89E6-7C61C0ACC126}"
+	ProjectSection(SolutionItems) = preProject
+		GovTools-Extractor-Selection.png = GovTools-Extractor-Selection.png
+		GovTools-VeraCrypt-Extraction.png = GovTools-VeraCrypt-Extraction.png
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE7BA15F-AF15-4233-A526-D12DA69FAA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7BA15F-AF15-4233-A526-D12DA69FAA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7BA15F-AF15-4233-A526-D12DA69FAA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7BA15F-AF15-4233-A526-D12DA69FAA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7AA928-FB26-4B5D-978F-1D32930AA718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7AA928-FB26-4B5D-978F-1D32930AA718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7AA928-FB26-4B5D-978F-1D32930AA718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7AA928-FB26-4B5D-978F-1D32930AA718}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F4E7FA5-6BD3-4CEC-965B-991035F15C03}
+	EndGlobalSection
+EndGlobal

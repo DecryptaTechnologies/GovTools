@@ -1,0 +1,21 @@
+﻿<Window x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.ActivateLinuxDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             d:DataContext="{d:DesignInstance vm:ActivateLinuxDialogViewModel}"
+             md:DialogServiceViews.IsRegistered="True"
+             mc:Ignorable="d" 
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             Height="230" Width="650" Background="{StaticResource AppBg}" WindowStartupLocation="CenterScreen">
+    <GroupBox Header="{i18n:Translate ActivateLinuxDialog.Title, Default='Activate Linux for Windows'}" Margin="12">
+
+        <StackPanel>
+            <TextBlock Text="{i18n:Translate ActivateLinuxDialog.Explanation}" />
+            <Button Content="{i18n:Translate ActivateLinuxDialog.btnActivate, Default='Activate Linux'}" Command="{Binding ActivateLinuxCommand}" HorizontalAlignment="Left" Margin="0 16 4 4" Padding="14 2" />
+        </StackPanel>
+
+    </GroupBox>
+</Window>

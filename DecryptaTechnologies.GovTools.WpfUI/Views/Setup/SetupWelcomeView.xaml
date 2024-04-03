@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.SetupWelcomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             xmlns:u="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.Utils"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             d:DataContext="{d:DesignInstance vm:SetupViewModel}"
+             mc:Ignorable="d" d:DesignWidth="800" Height="535">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#252526">
+            <Image Width="120" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/Resources/GovCracker_347x347.png"  />
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 24">
+                <Hyperlink Foreground="White" NavigateUri="https://govcracker.com" u:HyperlinkExtensions.IsExternal="True">www.govcracker.com</Hyperlink>
+            </TextBlock>
+        </Grid>
+        
+        <Grid Grid.Column="1" Background="#1F1F1F">
+            <StackPanel Margin="0 36 0 0">
+                <TextBlock Margin="36 24 36 24" Text="{i18n:Translate Setup.Welcome.Title, Default=':Welcome msg:'}" FontWeight="Light" FontSize="36" />
+                <TextBlock FontSize="15" Margin="36 12 36 0" TextWrapping="Wrap" Text="{i18n:Translate Setup.Welcome.Text, Default=':some long welcome text:'}" />
+                <TextBlock Text="{i18n:Translate Setup.Welcome.BulletListTitle, Default=':bullet list heading:'}" FontWeight="Light" FontSize="18" Margin="36 36 36 18" />
+                <StackPanel Margin="12 0 0 0">
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletLawRelated, Default='Law related stuff'}" />
+                    </BulletDecorator>
+                    <!--<BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="White" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="Configuring preferred languages" />
+                    </BulletDecorator>-->
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletPreparingHashcat, Default='Preparing Hashcat'}" />
+                    </BulletDecorator>
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletPreparingGovTools, Default='Preparing GovTools'}" />
+                    </BulletDecorator>
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletPreparingWordlists, Default='Installing Wordlists'}" />
+                    </BulletDecorator>
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletDriverNotes, Default='Driver notes'}" />
+                    </BulletDecorator>
+                    <BulletDecorator Margin="36 0 36 4">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="8" Width="8" Fill="#95CC29" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="8 0 0 0" Text="{i18n:Translate Setup.Welcome.BulletSetupCompletion, Default='Setup completion'}" />
+                    </BulletDecorator>
+                </StackPanel>
+
+                <StackPanel Margin="36 24 36 24" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 12 0" Text="{i18n:Translate Setup.Welcome.ThankYouMsg, Default='Thank you for downloading GovTools'}" />
+                    <fa:ImageAwesome Icon="Solid_ThumbsUp" Height="14" Width="14" PrimaryColor="White" />
+                </StackPanel>
+
+                <DockPanel LastChildFill="False" Margin="36 0">
+                    <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                        <!--<Button Command="{Binding SkipCommand}" Background="Black" Foreground="White" Padding="16 8" Content="skip" Margin="8 0 0 0" />-->
+                        <Button Command="{Binding ContinueCommand}" Background="Black" Foreground="White" Padding="16 8" Margin="8 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{i18n:Translate Setup.Welcome.ContinueButton, Default='start'}" Margin="0 0 8 0" />
+                                <fa:ImageAwesome Icon="Solid_ArrowRight" Width="12" Height="12" PrimaryColor="White" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 12 12 0">
+                <Button Style="{StaticResource DisableHighlightingButtonStyle}" Cursor="Hand" Command="{Binding ChangeLanguageCommand}" CommandParameter="en-US" Background="Transparent" Padding="0" Margin="8 0 0 0" BorderThickness="0">
+                    <Image Source="/Resources/flag_en-US.png" Width="24" Height="24" />
+                </Button>
+                <Button Style="{StaticResource DisableHighlightingButtonStyle}" Cursor="Hand" Command="{Binding ChangeLanguageCommand}" CommandParameter="de-DE" Background="Transparent" Padding="0" Margin="8 0 0 0" BorderThickness="0">
+                    <Image Source="/Resources/flag_de-DE.png" Width="24" Height="24" />
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+    </Grid>
+</UserControl>

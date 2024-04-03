@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.ApfsUbuntuInstallationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             d:DataContext="{d:DesignInstance vm:ApfsUbuntuInstallationViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Command="{Binding ActivateLinuxSubsystemCommand}" Background="#1e998a" Content="{i18n:Translate ActivateLinuxDialog.Title, Default='Activate Linux'}" Width="200" Height="40" FontSize="14" Cursor="Hand" />
+            <Button Command="{Binding ContinueCommand}" Content="{i18n:Translate ActivateLinuxDialog.Continue, Default='skip or continue'}" Width="300" Height="40" FontSize="14" HorizontalAlignment="Right" Margin="20 0 0 0" Cursor="Hand"/>
+        </StackPanel>
+       
+    </Grid>
+</UserControl>

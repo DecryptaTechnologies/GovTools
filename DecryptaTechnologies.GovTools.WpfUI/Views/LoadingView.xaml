@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.LoadingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="758" Width="1400">
+    <Grid>
+
+        <StackPanel Width="683" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="/Resources/GovTools_801x187.png" />
+
+            <DockPanel LastChildFill="False" Margin="0 0.6cm 0 0">
+                <TextBlock FontSize="19" Text="powered by Decrypta Technologies" Foreground="White" Margin="16 0 0 0" />
+                <TextBlock DockPanel.Dock="Right" FontSize="14" Text="{Binding VersionText, FallbackValue=1.2.3.4}" Foreground="White" Margin="0 0 52 0" />
+            </DockPanel>
+
+            <ProgressBar Value="{Binding Progress}" Maximum="100" Margin="0 1cm 0 0" Height="34" Foreground="#1AB188" Background="Transparent" BorderThickness="1" BorderBrush="White" />
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

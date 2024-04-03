@@ -1,0 +1,39 @@
+﻿<Window x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.ApfsAppleMacbooksExtractorInputDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             d:DataContext="{d:DesignInstance vm:ApfsAppleMacbooksExtractorInputDialogViewModel}"
+             md:DialogServiceViews.IsRegistered="True"
+             mc:Ignorable="d" 
+             Height="450" Width="700" Background="{StaticResource AppBg}" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="12">
+
+        <GroupBox Header="Activate Linux-Subsystem">
+            <StackPanel>
+                <TextBlock Text="Text A" />
+                <Button Content="Install Ubuntu 20.04." Command="{Binding InstallUbuntuCommand}" HorizontalAlignment="Left" Margin="0 14 50 4" FontWeight="Bold" Padding="14 2" />
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Create file image" Margin="0 12 0 0">
+            <TextBlock Text="Text B" />
+        </GroupBox>
+
+        <GroupBox Header="Extract the Hash" Margin="0 12 0 0">
+
+            <StackPanel>
+                <TextBlock Text="Text C" />
+                <StackPanel Orientation="Horizontal" Margin="0 12 0 0">
+                    <TextBlock Text="Select image file:" VerticalAlignment="Center" Margin="0 0 32 0" />
+                    <Button Content="Open" Command="{Binding OpenCommand}" Margin="4" Padding="14 2" />
+                    <Button Content="Help" Command="{Binding HelpCommand}" Margin="4 4 50 4" FontWeight="Bold" Padding="14 2" />
+                    <TextBox Width="200" Text="{Binding ImageFilePath}" IsReadOnly="True" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+    </StackPanel>
+</Window>

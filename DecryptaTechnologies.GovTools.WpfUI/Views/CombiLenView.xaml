@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.CombiLenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             d:DataContext="{d:DesignInstance vm:CombiLenViewModel}"
+             d:Style="{StaticResource PageDefaultDesignStyle}"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800" Margin="4">
+
+    <StackPanel Margin="8">
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+            <fa:ImageAwesome Icon="Solid_RulerCombined" PrimaryColor="White" Width="32" Height="32" Margin="0 0 12 0" />
+            <TextBlock Text="Combinator &amp; Len" FontSize="32" FontWeight="SemiBold" />
+        </StackPanel>
+        <TextBlock Text="{i18n:Translate CombiLen.CombiLenTitle, Default='Combinator Title'}" Margin="2 0 0 0" FontSize="16" />
+        <Separator Margin="0 18 0 16" />
+
+        <GroupBox Header="Combinator" Margin="0 0 0 8">
+            <StackPanel>
+                <TextBlock Text="{i18n:Translate CombiLen.CombiText, Default='Combinator Text'}" Margin="0 0 0 24" TextWrapping="WrapWithOverflow" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Wordlist 1:" VerticalAlignment="Center" Margin="0 0 12 8" />
+                    <TextBlock Grid.Row="1" Text="Wordlist 2:" VerticalAlignment="Center" Margin="0 0 12 8" />
+                    <TextBlock Grid.Row="2" Text="Wordlist 3:" VerticalAlignment="Center" Margin="0 0 12 8" />
+
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedWordlistFileOne}" Margin="0 0 0 8" IsReadOnly="True" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedWordlistFileTwo}" Margin="0 0 0 8" IsReadOnly="True" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedWordlistFileThree}" Margin="0 0 0 8" IsReadOnly="True" />
+
+                    <Button Grid.Row="0" Grid.Column="2" Command="{Binding SelectWordlistFileCommand}" CommandParameter="one" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Regular_File" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                    <Button Grid.Row="0" Grid.Column="3" Command="{Binding ClearWordlistFileCommand}" CommandParameter="one" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Solid_Trash" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+
+                    <Button Grid.Row="1" Grid.Column="2" Command="{Binding SelectWordlistFileCommand}" CommandParameter="two" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Regular_File" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="3" Command="{Binding ClearWordlistFileCommand}" CommandParameter="two" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Solid_Trash" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+
+                    <Button Grid.Row="2" Grid.Column="2" Command="{Binding SelectWordlistFileCommand}" CommandParameter="three" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Regular_File" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="3" Command="{Binding ClearWordlistFileCommand}" CommandParameter="three" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Solid_Trash" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                </Grid>
+
+                <ProgressBar Margin="0 0 0 8" Height="17" IsIndeterminate="True" Visibility="{Binding IsCombinating, Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="#1AB188" Background="Transparent" BorderThickness="1" BorderBrush="White" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="8 20 0 0">
+                    <Button Command="{Binding StopCombinatorCommand}" Content="STOP" Margin="8 0 0 0" />
+                    <Button Command="{Binding StartCombinatorCommand}" Content="START" Margin="8 0 0 0" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Len" Margin="0 0 0 8">
+
+            <StackPanel>
+                <TextBlock Text="{i18n:Translate CombiLen.LenText, Default='Len Text'}" Margin="0 0 0 24" TextWrapping="WrapWithOverflow" />
+
+                <Grid Margin="0 0 0 8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Wordlist:" VerticalAlignment="Center" Margin="0 0 12 8" />
+                    <TextBlock Grid.Row="1" Text="{i18n:Translate CombiLen.WordLengthFromText, Default='Word Length'}" Margin="0 0 12 0" VerticalAlignment="Center" />
+
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedLenWordlistFile}" Margin="0 0 0 8" IsReadOnly="True" />
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                        <TextBox Width="50" Text="{Binding WordLengthFromText}" TextAlignment="Center" />
+
+                        <TextBlock Text="{i18n:Translate CombiLen.Until, Default='until'}" Margin="12 0 12 0" VerticalAlignment="Center" />
+                        <TextBox Width="50" Text="{Binding WordLengthToText}" TextAlignment="Center" />
+                    </StackPanel>
+
+                    <Button Grid.Row="0" Grid.Column="2" Command="{Binding SelectLenWordlistFileCommand}" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Regular_File" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                    <Button Grid.Row="0" Grid.Column="3" Command="{Binding ClearWordlistFileCommand}" CommandParameter="len" ToolTip="{i18n:Translate MainForm.ChooseFolder, Default='Choose File'}" Style="{StaticResource DisableHighlightingButtonStyle}" Background="Transparent" Margin="13 0 0 8" Cursor="Hand" BorderThickness="0">
+                        <fa:ImageAwesome Icon="Solid_Trash" Width="18" Height="18" PrimaryColor="White" />
+                    </Button>
+                </Grid>
+
+                <ProgressBar Margin="0 0 0 8" Height="17" IsIndeterminate="True" Visibility="{Binding IsLenning, Converter={StaticResource BooleanToVisibilityConverter}}" Foreground="#1AB188" Background="Transparent" BorderThickness="1" BorderBrush="White" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding StopLenCommand}" Content="STOP" Padding="8 4" Margin="8 0 0 0" />
+                    <Button Command="{Binding StartLenCommand}" Content="START" Padding="8 4" Margin="8 0 0 0" />
+                </StackPanel>
+            </StackPanel>
+
+        </GroupBox>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.SetupEulaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             d:DataContext="{d:DesignInstance vm:SetupEulaViewModel}"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="{StaticResource SidenavBg}">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Image Source="/Resources/GovCrackerLogo.png" Height="80" HorizontalAlignment="Left" Margin="8 16" />
+        </Grid>
+
+        <GroupBox Grid.Row="1" Header="End User License Agreement (EULA)" BorderThickness="0.5" Padding="8">
+            <TextBox IsReadOnly="True" Height="300" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextWrapping="Wrap" xml:space="preserve" VerticalScrollBarVisibility="Auto">
+End User License Agreement (EULA) for the use and redistribution
+
+The following agreement for the use of „GovTools“ software - hereinafter referred to as "Software" - is concluded between Decrypta Technologies GmbH - hereinafter referred to as "Licensor" - and anyone who installs, accesses or uses this Software in any other way - hereinafter referred to as "User". 
+
+1. The author and owner of all copyrights to the software is Decrypta Technologies GmbH. The licensor and as such the issuer of the license and the exclusive owner of the worldwide rights to reproduce and distribute and the rights to make the Software available to the public in any form is Decrypta Technologies GmbH, Schwerte, Germany.
+
+2. This software is distributed as shareware. This means that anyone may use this software as a "Lite Version" free of charge. If the software is to be used beyond the "Lite Version", the user must purchase a license for the "Full Version".
+
+3. The unlicensed „Lite Version“ of the software may be distributed without restrictions, provided that the scope and content of the original package are not changed. The following restrictions apply: 
+
+a. No one may distribute any part of the original program package without the written permission of the copyright holder.
+
+b. The unlicensed „Lite Version“ of the Software may not be distributed as part of another software package without written permission of the copyright holder. The installation file of the Software may be offered for download only in its original unmodified form. The download of the installation file by the user may neither be hindered by further obstacles (e.g. download fees) nor by additional conditions (e.g. specification of personal data).
+
+c. The unmodified „Wallet-Inspector“ software may only be provided on its own and not in combination with other software. Any form of bundling with other software is prohibited. In particular, without the written consent of Decrypta Technologies GmbH, the use of installation or download software that provides other software in a package in addition to „Wallet-Inspector“ is prohibited.
+
+d. Hacks/cracks, registration keys or programs that create registration keys may not be distributed by the distributor of the trial version together with the trial version. It is also prohibited to link to or refer to such opportunities.
+
+e. If the previous conditions are violated, the permission to distribute the Software expires immediately and automatically.
+
+4. The „Lite Version“ of the software may display a reminder dialog prompting the user to purchase a license. Depending on the version and configuration of the software, this dialog contains either a predefined text with links that is loaded locally or a page that is reloaded from the Internet. This web page may contain information for purchasing a license or other content selected by the licensor, including advertisements. When opening an Internet page, the Software transmits only parameters that are technically required for successfully opening an Internet page in a browser using the HTTP protocol.
+
+5. The software is provided "as is". No warranty of any kind is given and is not included. Use is at your own risk. Neither the author, the licensor, nor any of the licensor's agents shall be liable for any loss of data, damages, lost profits or any other kind of loss arising out of the use or misuse of this software. The Software accesses other services on the Internet (e.g. WalletExplorer.com) via hyperlink. If these services are changed, charged or deleted, this is not a defect of the software, because we do not have access to this services.
+
+6. There are two types of licenses granted for the software. These are in detail: 
+
+a. A license for use on one computer. The user purchases a single user license for the use of the software on one computer.
+Home users may use their single user license on all computers and mobile devices (USB drive, external hard drive, etc.) owned by the license holder.
+For commercial users, one license is required per computer or mobile device on which the Software is installed.
+
+b. One license for use on multiple computers. The user purchases a precisely defined number of usage licenses for use by the purchaser himself or the purchaser's employees on a corresponding number of computers.
+In a network environment (client/server), the user must purchase a licensed copy for each client (workstation) on which the software is installed, used or from which the software can be accessed. A separate licensed copy is required for each client (workstation), regardless of whether the clients (workstations) use the software simultaneously or at different times. For example, if you want to deploy 9 different clients (workstations) in your network with access to „Wallet-Inspector“, you must purchase 9 Licensed copies. A user who has purchased a license is granted the non-exclusive right to use the software for legal purposes on as many computers as specified in the above license terms, according to the number of licenses purchased.
+
+7. No other license fees are due except for the cost of purchasing a license. 
+
+8. The licensed software may not be rented or leased. However, the license may be permanently transferred in its entirety if the new user accepts this license agreement.
+
+9. Any use of the software beyond the scope of this license agreement, i.e. copying, emulating, cloning, renting, leasing, selling, modifying, decompiling, disassembling, otherwise reverse engineering or transferring the licensed software or any part of the licensed software, is prohibited and will result in the immediate automatic termination of this license. Any use of the software in excess of this license agreement may result in criminal and/or civil prosecution. The program code of „Wallet-Inspector“ may not be used to replicate the copyrighted program code unless expressly authorized in writing.
+
+10. This license agreement shall be interpreted exclusively in accordance with German law. If you are a dealer, the courts at the registered office of Decrypta Technologies GmbH in Schwerte, Germany shall have exclusive jurisdiction over any dispute arising in connection with this License Agreement or its validity.
+
+The installation and use of this Software constitutes acceptance of the terms and conditions of this License Agreement. If you do not agree with the terms and conditions of this License, you must delete all files of this Software from your storage media and stop using the Software. 
+
+Decrypta Technologies GmbH / Status 17.06.2023
+
+        </TextBox>
+        </GroupBox>
+
+        <DockPanel Grid.Row="2" Margin="12">
+            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                <Button Command="{Binding BackCommand}" Background="Black" Foreground="White" Padding="16 8" Margin="0 0 8 0">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Solid_ArrowLeft" Width="12" Height="12" PrimaryColor="White" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <!--<Button Command="{Binding SkipCommand}" Background="Black" Foreground="White" Padding="16 8" Content="skip" Margin="8 0 0 0" />-->
+                <Button Command="{Binding ContinueCommand}" Background="Black" Foreground="White" Padding="16 8" Margin="8 0 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{i18n:Translate Setup.Eula.ContinueButton, Default='accept'}" Margin="0 0 8 0" />
+                        <fa:ImageAwesome Icon="Solid_ArrowRight" Width="12" Height="12" PrimaryColor="White" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 24 0">
+                <CheckBox IsChecked="{Binding Accepted}" VerticalAlignment="Center" Content="{i18n:Translate Setup.Eula.CheckButton, Default='I accept the terms in the End User License Agreement (EULA)'}" />
+            </StackPanel>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

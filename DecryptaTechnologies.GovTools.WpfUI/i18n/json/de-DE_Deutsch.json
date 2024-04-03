@@ -1,0 +1,130 @@
+{
+  "Sidebar": {
+    "Extractor": "Extraktion",
+    "CombiLen": "Combinator & Len",
+    "DupcHashGen": "DupC & HashGen",
+    "BulkExtractor": "Bulk-Extractor",
+    "Settings": "Einstellungen"
+  },
+  "MainForm": {
+    "HashExtraction": "Hash-Extraktion",
+    "Extractor": "Extraktor:",
+    "ChooseFolder": "Einen Ordner auswählen",
+    "ChooseFile": "Eine Datei auswählen",
+    "FileOrFolder": "Datei oder Ordner auswählen",
+    "FileFolder": "Datei / Ordner:",
+    "Help": "Hilfe",
+    "Infos": "Hinweise",
+    "Extraction": "Extraktion von Passwort-Hashes",
+    "ExtractionText": "Passwort Hashes aus verschiedenen Dateien oder Ordnern für GovCracker extrahieren.",
+    "SelectExtractor": "Extraktor auswählen",
+    "SearchExtractor": "Extraktor suchen",
+    "ExtractionCanceled": "Extraktion abgebrochen",
+    "ExtractionFinished": "Extraktion beendet",
+    "ExtractionFailed": "Extraktion fehlgeschlagen",
+    "ExtractionRunning": "Läuft, bitte warten ...",
+    "OpenHashoutFolder": "Extraktionsordner öffnen",
+    "RefreshExtractor": "Weitere Extraktion durchführen",
+    "Cancel": "abbrechen",
+    "AdminRights": "Die Ausführung ist nur mit Admin-Rechten möglich!",
+    "LoadMessage": "Sie garantieren, dass Sie die Software \"GovTools\" ausschließlich für legale Zwecke, wie bspw. für wissenschaftliche und forensische Analysen oder im Rahmen der Strafverfolgung benutzen. Andernfalls drücken Sie die Schaltfläche \"Nein\" um die Software zu beenden.\n\nDie Software wird \"wie gesehen\" bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Garantie, einschließlich, aber nicht beschränkt auf die Garantien der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter.\n\nUNTER KEINEN UMSTÄNDEN HAFTEN DIE AUTOREN ODER URHEBERRECHTSINHABER FÜR JEGLICHE ANSPRÜCHE, SCHÄDEN ODER ANDERE HAFTUNGEN, SEI ES DURCH VERTRAG, UNERLAUBTE HANDLUNGEN ODER ANDERWEITIG, DIE SICH AUS DER SOFTWARE ODER DER NUTZUNG DER SOFTWARE ODER DEM SONSTIGEN UMGANG MIT DER SOFTWARE ERGEBEN ODER DAMIT IN VERBINDUNG STEHEN."
+  },
+  "Extractors": {
+    "ExtractionCompleted": "Der Passwort-Hash wurde extrahiert und im Ordner \"_Hashout\" abgespeichert.\n\nDie folgenden Hash-Typen kommen für dieses Dateiformat in Betracht:",
+    "Bitlocker": "Die Extraktion des Bitlocker-Hashes kann einige Zeit In Anspruch nehmen.\nDie Extraktion eines 16GB USB-Stick dauert ca. eine Stunde.\nGovCracker Algorithmus: 22100",
+    "WindowsLive": "Bei einem Live-System müssen die SAM, SYSTEM und SECURITY zuerst gesichert werden, da ein direkter Zugriff auf den Pfad \"C:\\Windows\\System32\\config\" nicht möglich ist. Über den Button 'Live-Mode' werden die drei Dateien in den Ordner '\\Packages\\Temp' kopiert und anschließend wird die Extraktion automatisch gestartet.\nGovCracker Algorithmus: 1000",
+    "WindowsOffline": "Booten Sie den Windows-PC der Zielperson bspw. mit einer Linux-Distribution (z. B. Paladin, Kali oder Caine) und speichern die SAM, SYSTEM und SECURITY Dateien aus dem Ordner \"C:\\Windows\\System32\\config\" auf einen USB-Stick. Danach wählen Sie bitte diesen Ordner aus.\nGovCracker Algorithmus: 1000",
+    "WindowsHelloLive": "Bei einem Live-System müssen die SYSTEM und SECURITY zuerst gesichert werden, da ein direkter Zugriff auf den Pfad \"C:\\Windows\\System32\\config\" nicht möglich ist. Über den Button 'Live-Mode' werden die zwei Dateien in den Ordner '\\Packages\\Temp' kopiert und anschließend wird die Extraktion automatisch gestartet.\nGovCracker Algorithmus: 28100",
+    "WindowsHelloOffline": "Bitte wählen Sie die Ordner: \"Windows\" aus. Bitte beachten Sie, dass es sich nicht um ein laufendes Windows System handeln darf.\nGovCracker Algorithmus: 28100",
+    "APFS": "Bei erstmaliger Nutzung müssen Sie \"Linux für Windows\" (s. Windows-Store: \"Ubuntu 20.04 LTS oder 22.04. LTS\") installieren. Danach drücken Sie bitten den linken Button, um das Linux-Subsystem zu aktivieren. Starten Sie Ubuntu im Start-Menü und vergeben Sie einen Benutzernamen und ein Passwort.\n\nBitte erstellen Sie ein Raw-Image (.dd, .dmg oder .001) der gesamten Festplatte (ohne Dateisplitting) des APFS MacBooks (ohne T2-Chip). Kopieren Sie das Image bitte auf eine interne Festplatte, wie bspw D:\\ (keine ex. Festplatte). Jetzt können Sie das Image über den Button auswählen. Es ist möglich, dass mehrere Hashes extrahiert werden, weil mehrere UUID auf dem System vorhanden sind (siehe \"APFS_Raw_UUID\" Datei). Grds. ist der erste Hash in der \"APFS_Extraction_Hash\" Datei der des lokalen Nutzers. GovCracker Algorithmus: 18300.\n",
+    "LinuxLogin": "Bitte wählen Sie die Datei: \"Shadow\" aus dem Linux Verzeichnis \"etc/shadow\" aus.\nGovCracker Algorithmus: 1800",
+    "Cygwin": "Wichtig: Eine Extraktion ist nur möglich, wenn die Software \"Cygwin\" (https://cygwin.com/install.html) installiert ist!",
+    "PDF": "Bitte wählen Sie \"PDF\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 10400-10700+25400",
+    "iTunes": "Bitte wählen Sie die Datei: \"manifest.plist\" im folgendem Fenster aus.\nGovCracker Algorithmus: 14700-14800",
+    "Bitcoin": "Bitte wählen Sie die Datei: \"wallet.dat\" im folgendem Fenster aus.\nGovCracker Algorithmus: 11300",
+    "Multibit": "Bitte wählen Sie das Backup-Key-File (*.key) aus dem Ordner: \"\\AppData\\Roaming\\MultiBit\\multibit-data\\key-backup\\\" oder das Wallet-file (*.wallet.aes) aus dem Ordner: \"\\AppData\\noaming\\MultiBit\\multibit-data\\wallet-backup\" aus.\nGovCracker Algorithmus: 22500+22700+27700",
+    "Electrum": "Bitte wählen Sie die Datei: \"default_wallet\" oder eine andere Wallet-Datei im folgendem Fenster aus.\nGovCracker Algorithmus: 16600+21700+21800",
+    "ETH": "Bitte wählen Sie die Keystore-Datei: \"UTC-- ...\" im folgendem Fenster aus.\nGovCracker Algorithmus: 15600+15700+16200",
+    "eCryptfs": "Bitte wählen Sie die Datei: \"wrapped-passphrase\" im folgendem Fenster aus.\nGovCracker Algorithmus: 12200",
+    "Exodus": "Wählen Sie bitte im Ordner \"...\\AppData\\Roaming\\Exodus\\exodus.wallet\\ die Datei \"seed.seco\" aus.\nGovCracker Algorithmus: 28200",
+    "Firefox": "Wählen Sie bitte im Ordner \"...\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\\" die Datei \"key3.db\" oder \"key4.db\" aus.\nGovCracker Algorithmus: 26000+26100",
+    "OpenOffice": "Bitte wählen Sie \"OpenOffice oder LibreOffice\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 18400+18600",
+    "LUKS": "Bitte wählen Sie eine LUKS Datei im folgendem Fenster aus.\nGovCracker Algorithmus: 29511-29543",
+    "Office": "Bitte wählen Sie \"Office\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 9400-9820+25300",
+    "SevenZip": "Bitte wählen Sie \"7zip\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 11600",
+    "VeraCryptFiles": "VeraCrypt ist eine der stärksten Verschlüsselungsarten die es weltweit gibt. Um die Verschlüssung noch weiter zu verstärken, können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen VeraCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Container-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Hidden-Volumen. Beide Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\n Bitte wählen Sie eine \"VeraCrypt\" Container-Datei im folgendem Fenster aus.\nGovCracker Algorithmus: 29411-29483",
+    "VeraCryptPartition": "VeraCrypt ist eine der stärksten Verschlüsselungsarten die es weltweit gibt. Um die Verschlüssung noch weiter zu verstärken, können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen VeraCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Partitions-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Hidden-Volumen. Beide Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\nACHTUNG: Erstellen Sie ein ungesplittetes RAW-Image (.dd, .001, etc.) der verschlüsselten VeraCrypt-Partition und NICHT des gesamten Datenträgers! Für die Erstellung können Sie bspw. die Software \"FTK-Imager\" benutzen. Bitte wählen Sie die Image-Datei der verschlüsselten VeraCrypt-Partition im folgendem Fenster aus.\nGovCracker Algorithmus: 29411-29483",
+    "VeraCryptBoot": "VeraCrypt ist eine der stärksten Verschlüsselungsarten die es weltweit gibt. Um die Verschlüssung noch weiter zu verstärken, können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen VeraCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Boot-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Boot-Hidden-Volumen und eine Kombination aus beidem. Alle drei Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\nACHTUNG: Erstellen Sie ein ungesplittetes RAW-Image (.dd, .001, etc.) der verschlüsselten VeraCrypt-Boot-Partition und NICHT des gesamten Datenträgers! Für die Erstellung können Sie bspw. die Software \"FTK-Imager\" benutzen. Bitte wählen Sie die Image-Datei der verschlüsselten VeraCrypt-Boot-Partition im folgendem Fenster aus. GovCracker Algorithmus: 29411-29483",
+    "TrueCryptFiles": "TrueCrypt ist der Vorgänger von VeraCrypt. Auch hier können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen TrueCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Container-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Hidden-Volumen. Beide Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\n Bitte wählen Sie eine \"TrueCrypt\" Container-Datei im folgendem Fenster aus.\nGovCracker Algorithmus: 29311-29343",
+    "TrueCryptPartition": "TrueCrypt ist der Vorgänger von VeraCrypt. Auch hier können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen TrueCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Partitions-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Hidden-Volumen. Beide Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\nACHTUNG: Erstellen Sie ein ungesplittetes RAW-Image (.dd, .001, etc.) der verschlüsselten TrueCrypt-Partition und NICHT des gesamten Datenträgers! Für die Erstellung können Sie bspw. die Software \"FTK-Imager\" benutzen. Bitte wählen Sie die Image-Datei der verschlüsselten TrueCrypt-Partition im folgendem Fenster aus.\nGovCracker Algorithmus: 29311-29343",
+    "TrueCryptBoot": "TrueCrypt ist der Vorgänger von VeraCrypt. Auch hier können Keyfiles, PIMs oder auch Hidden-Volumen genutzt werden. Ob eines dieser zusätzlichen TrueCrypt Features eingesetzt wurde, kann digital forensisch nicht herausgefunden werden. GovTools extrahiert daher autom. den Passwort-Hash für das \"äußere\" Boot-Volumen und vorsorglich den Hash für ein etwaiges \"inneres\" Boot-Hidden-Volumen und eine Kombination aus beidem. Alle drei Hashes werden in dieser Reihenfolge in die Hashout Datei geschrieben.\n\nACHTUNG: Erstellen Sie ein ungesplittetes RAW-Image (.dd, .001, etc.) der verschlüsselten TrueCrypt-Boot-Partition und NICHT des gesamten Datenträgers! Für die Erstellung können Sie bspw. die Software \"FTK-Imager\" benutzen. Bitte wählen Sie die Image-Datei der verschlüsselten TrueCrypt-Boot-Partition im folgendem Fenster aus. GovCracker Algorithmus: 29311-29343",
+    "ZIP": "Eine ZIP-Extraktion ist nur möglich, wenn die Software \"Cygwin\" (https://cygwin.com/install.html) installiert ist!\nBitte wählen Sie \"ZIP\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 13600+17200-17230+20500+20510",
+    "RAR": "Eine RAR-Extraktion ist nur möglich, wenn die Software \"Cygwin\" (https://cygwin.com/install.html) installiert ist!\nBitte wählen Sie \"RAR\" Dateien im folgendem Fenster aus.\nGovCracker Algorithmus: 12500+13000+23700+23800",
+    "FileButton": "Bitte wählen Sie im nächsten Fenster die verschlüsselte Datei oder Image aus. Nach der Auswahl startet der Extraktionsvorgang automatisch. Sie erhalten eine Mitteilung sobald die Extraktion abgeschlossen ist.",
+    "FileText": "Extraktion aus Datei",
+    "FolderButton": "Bitte wählen Sie im nächsten Fenster den Ordner mit den verschlüsselten Dateien aus. Nach der Auswahl startet der Extraktionsvorgang automatisch. Sie erhalten eine Mitteilung sobald die Extraktion abgeschlossen ist.",
+    "FolderText": "Extraktion aus einem Ordner",
+    "Ubuntu": "Ubuntu ist nicht installiert!",
+    "Keepass": "Keepass",
+    "MetaMask": "Bei der Extraktion werden zwei Dateien (Hash-Datei und VaultJSON-Datei) in den '_Hashout' Ordner gespeichert. Die VaultJSON-Datei können Sie zum Extrahieren der Seeds verwenden (siehe MetaMask-Seed Extractor). \n\n Bitte wählen Sie im Ordner: 'nkbihfbeogaeaoehlefnkodbefgpgknn' im Pfad für Chrome/Edge/Opera: 'C:\\Users\\$USER\\AppData\\[Local oder Roaming]\\[Browserpfad]\\User Data\\Default\\Local Extension Settings\\ eine der Dateien: 000005.ldb, 000004.ldb oder 000003.ldb aus. Die Ordner Bezeichnung kann varieren. \n\n ACHTUNG: Der entsprechende Browser mit der MetaMask-App darf nicht gestartet sein. Vor der Extraktion sicherheitshalber alle Browser beenden. Weitere Infos finden Sie unter: https://support.metamask.io/ unter dem Stichwort: 'How-to-recover-your-Secret-Recovery-Phrase'. GovCracker Algorithmus: 26600-26620",
+    "MetaMaskSeed": "Wenn Sie über den Button 'MetaMask (Password)' die VaultJSON Datei extrahiert haben und das Passwort mit GovCracker entschlüsseln konnten, können Sie über die Homepage von MetaMask auf eigene Gefahr die Seed-Phrase für die Wallet entschlüsseln. Über den Button können Sie die Homepage aufrufen. \n\n "
+  },
+  "WindowsLoginPassword": {
+    "PathEmpty": "Der Pfad konnte nicht gefunden werden!"
+  },
+  "ItunesBackupIphone": {
+    "SelectionNotice": "Bitte wählen Sie die Datei: \"manifest.plist\" im folgendem Fenster aus."
+  },
+  "ActivateLinuxDialog": {
+    "Title": "Linux für Windows aktivieren",
+    "Explanation": "1) Updaten Sie Windows 10 auf den neuesten Stand.\n2) Gehen Sie in den Windows Store und installieren Sie \"Ubuntu 20.04 LTS\". Es ist kostenlos.\n3) Jetzt müssen Sie Linux noch aktivieren. Drücken Sie den Button.\n4) Im Windows-Menü unter \"Start\" finden Sie nun den Eintrag Ubuntu 20.04.\n5) Starten Sie Ubuntu 20.04 und vergeben Sie einen Username und Passwort.",
+    "btnActivate": "Linux aktivieren",
+    "ActivationError": "Fehler bei der Aktivierung von Linux für Windows",
+    "Continue": "überspringen bzw. weiter"
+  },
+  "KeepassDialog": {
+    "Title": "\"KeePass Password Safe \" ist ein freies Programm zur Passwortverwaltung. Die Datenbank ist durch ein Hauptpasswort gesichert und es kann zusätzlich eine Schlüsseldatei (\"Keyfile\") verwendet werden. Das Hauptpasswort und die Schlüsseldatei bilden bei gleichzeitiger Benutzung einen gemeinsamen Schlüssel. Die von KeePass erzeugten Schlüsseldateien besitzen überwiegend die Endung *.key oder *.keyx. Sollte bei der Zielperson eine solche Datei identifiziert werden, dann können Sie diese optional über den linken Button angeben.\nGovCracker Algorithmus: 13400+29700\n\n",
+    "Keyfile": "Keyfile auswählen (optional)"
+  },
+  "Bulk": {
+    "Title": "Bulk Extractor ist ein leistungsstarkes Werkzeug für die digitale Forensik.",
+    "Text": "Bulk Extractor ist ein leistungsstarkes Werkzeug für die digitale Forensik. Es ist ein Anwendung die schnell jede Art von Input (Disk-Images, Dateien, Dateiverzeichnisse usw.) scannt und strukturierte Informationen wie E-Mail-Adressen, Kreditkartennummern, JPEGs und JSON-Snippets extrahiert, ohne das Dateisystem oder Dateisystemstrukturen zu parsen. Die Ergebnisse werden in Textdateien gespeichert, die leicht inspiziert, durchsucht oder als Input für andere forensische Verarbeitungen verwendet werden können. Bulk Extractor erstellt auch Histogramme bestimmter Arten von Merkmalen die es findet, wie bspw. Google-Suchbegriffe oder E-Mail-Adressen.\n\nDie Ergebnisse werden im Ordner \"_Wordlists\" gespeichert.",
+    "OnlyWordlist": "Nur Wordlist erzeugen",
+    "FullExtraction": "Volle Extraktion",
+    "Supported": "(RAW-Formate: .dd, .001, .mem, etc.)",
+    "WordLengthFromText": "Wörter-Länge:",
+    "Until": "bis"
+  },
+  "CombiLen": {
+    "CombiLenTitle": "Combinator und Len sind wertvolle Tools zum Bearbeiten von Wordlists.",
+    "CombiText": "Combinator kann bis zu drei Wordlists miteinander verbinden. Jedes Wort der zweiten und dritten Wordlist wird an jedes Wort der ersten bzw. zweiten Wordlist angehangen. Das Ergebnis wird im Ordner \"_Wordlists\" gespeichert.",
+    "LenText": "Mit \"Len\" können Sie Passwortkandidaten mit einer bestimmten Länge aus Wordlists in eine neue Wordlist extrahieren.\nDas Ergebnis wird im Ordner \"_Wordlists\" gespeichert.",
+    "WordLengthFromText": "Wörter-Länge:",
+    "Until": "bis"
+  },
+  "DupHash": {
+    "DupHashTitle": "DupCleaner entfernt Duplikate aus Wordlists. Hash-Generator erzeugt Hashes für Testzwecke.",
+    "DupText": "DupCleaner entfernt Duplikate aus Wordlists und schreibt die Ergebnisse in eine neue Wordlist.\nDas Ergebnis wird im Ordner \"_Wordlists\" gespeichert.",
+    "DupFile": "Datei:",
+    "HashText": "Hash-Generator erzeugt Hashes (MD5, SHA1, SHA256, SHA512) für Testzwecke.\nDas Ergebnis wird im Ordner \"_Hashout\" gespeichert"
+  },
+  "About": {
+    "Title": "Rechtliche Hinweise",
+    "Text": "GovTools ©2024 by Decrypta Technologies https://www.govcracker.com\nLen + Combi ©2024 by Atom https://hashcat.net\nJohn the Ripper ©2024 by Solar Designer https://www.openwall.com/john/\nMetaMask Extractor ©2024 by Cyclone https://github.com/cyclone-github/metamask_extractor\nBulk Extractor ©2024 by Simson Garfinkel https://github.com/simsong/bulk_extractor\n7z2hashcat ©2024 by philsmd https://github.com/philsmd/7z2hashcat\nSecretsdump ©2024 by agsolino https://github.com/SecureAuthCorp/impacket/tree/master/examples\nWinhello2hashcat + apfs2hashcat ©2024 by Banaanhangwagen https://github.com/Banaanhangwagen/WINHELLO2hashcat + apfs2hashcat\nPortable Python 2.7 + 3.8 ©2024 by Aman Ansari https://sourceforge.net/projects/portable-python/\nStrawberry Portable Perl ©2024 http://strawberryperl.com/\nLogos + Pictures: Creative-Commons-License (COO)",
+    "LoadMessage": "Sie garantieren, dass Sie die Software 'GovTools' ausschließlich für legale Zwecke, wie bspw. für wissenschaftliche und forensische Analysen oder im Rahmen der Strafverfolgung benutzen. Die Software wird 'wie gesehen' bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Garantie, einschließlich, aber nicht beschränkt auf die Garantien der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter.\nUNTER KEINEN UMSTÄNDEN HAFTEN DIE AUTOREN ODER URHEBERRECHTSINHABER FÜR JEGLICHE ANSPRÜCHE, SCHÄDEN ODER ANDERE HAFTUNGEN, SEI ES DURCH VERTRAG, UNERLAUBTE HANDLUNGEN ODER ANDERWEITIG, DIE SICH AUS DER SOFTWARE ODER DER NUTZUNG DER SOFTWARE ODER DEM SONSTIGEN UMGANG MIT DER SOFTWARE ERGEBEN ODER DAMIT IN VERBINDUNG STEHEN."
+  },
+  "Settings": {
+    "WindowTitle": "Einstellungen",
+    "Application": "Anwendung",
+    "General": "Allgemein",
+    "Language": {
+      "Name": "Sprache",
+      "Description": "Setzen Sie die Sprache für die Anwendungsoberfläche.\nErfordert einen Neustart."
+    },
+    "GovCracker": {
+      "Name": "Pfad zum \"GovCracker\" Ordner",
+      "Description": "Wenn Sie die Software \"GovCracker\" installiert haben können Sie hier den Ordner-Pfad speichern. Alle Ergebnisse aus GovTools werden dann automatisch in die \"_Hashout\" und \"_Wordlist\" Ordner in GovCracker gespeichert, damit Sie die Ergebnisse direkt für Attacken benutzen können.",
+      "GovCrackerFolderPath": "Bitte geben Sie in den Einstellungen den Pfad zu Ihrer GovCracker-Installation an."
+    }
+  }
+}

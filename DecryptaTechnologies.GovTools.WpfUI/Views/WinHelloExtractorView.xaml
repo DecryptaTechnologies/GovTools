@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.WinHelloExtractorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.ViewModels"
+             xmlns:i18n="clr-namespace:rskibbe.I18n.Wpf;assembly=rskibbe.I18n.Wpf"
+             xmlns:fa="http://schemas.fontawesome.com/icons/fonts"
+             d:DataContext="{d:DesignInstance vm:WindowsLoginExtractorViewModel}"
+             mc:Ignorable="d"
+             d:DesignStyle="{StaticResource PageDefaultDesignStyle}">
+    <Grid>
+
+        <StackPanel Margin="0 24 0 0" HorizontalAlignment="Center">
+            <Button Width="550" Margin="0 0 0 24" Command="{Binding LiveModeCommand}">
+                <DockPanel>
+                    <fa:ImageAwesome Icon="Brands_Windows" PrimaryColor="White" Height="60" Width="60" Margin="24 0 24 0" />
+                    <StackPanel DockPanel.Dock="Right" Margin="0 0 24 12">
+                        <TextBlock Text="Live Mode" FontWeight="Bold" Margin="0 12 0 8" FontSize="16" />
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="{i18n:Translate Extractors.WindowsHelloLive, Default='Windows-Live'}" />
+                    </StackPanel>
+                </DockPanel>
+            </Button>
+            <Button Width="550" Margin="0 0 0 24" Command="{Binding SelectFolderPathCommand}" >
+                <DockPanel>
+                    <fa:ImageAwesome Icon="Regular_Folder" PrimaryColor="White" Height="60" Width="60" Margin="24 0 24 0" />
+                    <StackPanel DockPanel.Dock="Right" Margin="0 0 24 12">
+                        <TextBlock Text="Offline Mode" FontWeight="Bold" Margin="0 12 0 8" FontSize="16" />
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="{i18n:Translate Extractors.WindowsHelloOffline, Default='Windows-Offline'}" />
+                    </StackPanel>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

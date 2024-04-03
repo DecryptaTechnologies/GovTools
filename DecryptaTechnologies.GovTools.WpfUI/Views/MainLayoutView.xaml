@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="DecryptaTechnologies.GovTools.WpfUI.Views.MainLayoutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DecryptaTechnologies.GovTools.WpfUI.Views"
+             d:DataContext="{d:DesignInstance vm:MainLayoutViewModel}"
+             mc:Ignorable="d" 
+             Height="720" Width="1000" Background="{StaticResource AppBg}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Column="0" Content="{Binding SidenavViewModel}" />
+        <ContentControl Grid.Column="1" Content="{Binding CurrentScreen}" />
+    </Grid>
+</UserControl>
