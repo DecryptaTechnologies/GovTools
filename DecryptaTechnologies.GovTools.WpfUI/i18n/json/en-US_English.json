@@ -44,6 +44,7 @@
     "Bitcoin": "Please select the file: \"wallet.dat\" from the Bitcoin-Core directory in the following window.\nGovCracker Algorithm: 11300",
     "Litecoin": "Please select the file: \"wallet.dat\" from the Litecoin-Core directory in the following window.\nGovCracker Algorithm: 11300",
     "Dogecoin": "Please select the file: \"wallet.dat\" from the Dogecoin-Core directory in the following window.\nGovCracker Algorithm: 11300",
+    "DASHcoin": "Please select the file: \"wallet.dat\" from the DASH-Core directory in the following window.\nGovCracker Algorithm: 11300",
     "Multibit": "Please select the Backup-Key-File (*.key) from the folder: \"\\AppData\\Roaming\\MultiBit\\multibit-data\\key-backup\\\" or the Wallet-file (*.wallet.aes) from the folder: \"\\AppData\\Roaming\\MultiBit\\multibit-data\\wallet-backup.\nGovCracker Algorithm: 22500+22700+27700",
     "Electrum": "Please select the file: \"default_wallet\" or another wallet file in the next field.\nGovCracker Algorithm: 16600+21700+21800",
     "ETH": "Please select the keystore-file: \"UTC-- ...\" in the next field.\nGovCracker Algorithm: 15600+15700+16200",

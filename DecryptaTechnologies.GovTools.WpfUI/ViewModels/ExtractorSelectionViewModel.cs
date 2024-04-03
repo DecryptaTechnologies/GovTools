@@ -116,6 +116,7 @@ public partial class ExtractorSelectionViewModel : ScreenViewModelBase
                      new(App.Container.Resolve<BitcoinWalletExtractor>()),
                      new(App.Container.Resolve<DogeWalletExtractor>()),
                      new(App.Container.Resolve<LitecoinWalletExtractor>()),
+                     new(App.Container.Resolve<DASHWalletExtractor>()),
                      new(App.Container.Resolve<ElectrumWalletExtractor>()),
                      new(App.Container.Resolve<EthereumWalletExtractor>()),
                      new(App.Container.Resolve<ExodusWalletExtractor>()),

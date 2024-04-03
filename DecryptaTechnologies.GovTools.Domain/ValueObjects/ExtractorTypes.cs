@@ -16,6 +16,7 @@ public enum ExtractorTypes
     EthereumWallet,
     ExodusWallet,
     LitecoinWallet,
+    DASHWallet,
     MetaMaskWallet,
     MetaMaskSeed,
     MultiBitWallet,

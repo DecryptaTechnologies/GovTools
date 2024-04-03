@@ -17,6 +17,7 @@
     <None Remove="Resources\extractor-apfs.png" />
     <None Remove="Resources\extractor-bitcoin.png" />
     <None Remove="Resources\extractor-bitlocker.png" />
+    <None Remove="Resources\extractor-dash.png" />
     <None Remove="Resources\extractor-default.png" />
     <None Remove="Resources\extractor-dogecoin.png" />
     <None Remove="Resources\extractor-ecryptfs.png" />
@@ -76,6 +77,7 @@
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\extractor-bitlocker.png" />
+    <Resource Include="Resources\extractor-dash.png" />
     <Resource Include="Resources\extractor-default.png" />
     <Resource Include="Resources\extractor-dogecoin.png" />
     <Resource Include="Resources\extractor-ecryptfs.png" />
