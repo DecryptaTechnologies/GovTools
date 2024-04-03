@@ -8,7 +8,7 @@
              d:DataContext="{d:DesignInstance vm:AboutDialogViewModel}"
              mc:Ignorable="d" 
              Title="{i18n:Translate About.Title, Default='About'}"
-             d:DesignHeight="450" d:DesignWidth="800" Background="{StaticResource AppBg}">
+             Height="600" Width="850" Background="{StaticResource AppBg}">
 
     <Grid Margin="12">
         
