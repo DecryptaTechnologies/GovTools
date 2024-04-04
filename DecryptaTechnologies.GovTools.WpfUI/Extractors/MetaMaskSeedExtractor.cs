@@ -19,7 +19,7 @@ public partial class MetaMaskSeedExtractor : ExtractorBase
 
     public override string Hint => $"{_translator.Translate("Extractors.MetaMaskSeed")}";
 
-    public override string Name => "MetaMask (Seed)";
+    public override string Name => "MetaMask (Seeds)";
 
     public MetaMaskSeedExtractor(
         IIniFile iniFile,
