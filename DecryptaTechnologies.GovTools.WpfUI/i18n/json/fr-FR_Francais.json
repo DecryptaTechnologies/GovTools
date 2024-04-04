@@ -70,7 +70,7 @@
     "Ubuntu": "Ubuntu n'est pas installé !",
     "Keepass": "Keepass",
     "Metamask": "Dans l'extraction, deux fichiers (fichier de hachage et fichier vaultjson) sont enregistrés dans le dossier '_Hashout'. \n\n Dans le dossier: 'nkbihfbeogaeaoehaoehlefnkodfgpgknn' dans le chemin pour Chrome/Edge/Opera: 'C:\\Users\\$User\\AppData\\[local ou roaming]\\[Browserpath]\\User Data\\Default\\Local Extension Settings\\ un des fichiers: 000005.ldb, 000004.ldb ou 000003.ldb. Pour être sûr, voir plus d'informations. Des informations supplémentaires peuvent être trouvées sur: https://support.metamask.io/ sous le mot-clé: 'How-to-Cocover-your-secret-reret-phrase'. Algorithme GovCracker : 26600-26620",
-    "MetaMaskSeed": "Si vous avez extrait le VaultJSON fichier via le bouton 'MetaMask (Password)' et que vous avez pu décrypter le mot de passe avec GovCracker, vous pouvez, à vos risques et périls, décrypter la phrase d'amorce pour le portefeuille via la page d'accueil de MetaMask. Vous pouvez accéder à la page d'accueil en cliquant sur le bouton. \n\n "
+    "MetaMaskSeed": "Si vous avez extrait le VaultJSON fichier via le bouton 'MetaMask (Password)' et que vous avez pu décrypter le mot de passe avec GovCracker, vous pouvez, à vos risques et périls, décrypter la phrase d'amorce pour le portefeuille via la github page d'accueil de MetaMask. Vous pouvez accéder à la page d'accueil en cliquant sur le bouton. \n\n "
   },
   "WindowsLoginPassword": {
     "PathEmpty": "Le chemin n'a pas été trouvé !"

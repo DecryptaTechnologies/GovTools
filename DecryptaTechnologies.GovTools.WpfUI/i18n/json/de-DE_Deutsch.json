@@ -70,7 +70,7 @@
     "Ubuntu": "Ubuntu ist nicht installiert!",
     "Keepass": "Keepass",
     "MetaMask": "Bei der Extraktion werden zwei Dateien (Hash-Datei und VaultJSON-Datei) in den '_Hashout' Ordner gespeichert. Die VaultJSON-Datei können Sie zum Extrahieren der Seeds verwenden (siehe MetaMask-Seed Extractor). \n\n Bitte wählen Sie im Ordner: 'nkbihfbeogaeaoehlefnkodbefgpgknn' im Pfad für Chrome/Edge/Opera: 'C:\\Users\\$USER\\AppData\\[Local oder Roaming]\\[Browserpfad]\\User Data\\Default\\Local Extension Settings\\ eine der Dateien: 000005.ldb, 000004.ldb oder 000003.ldb aus. Die Ordner Bezeichnung kann varieren. \n\n ACHTUNG: Der entsprechende Browser mit der MetaMask-App darf nicht gestartet sein. Vor der Extraktion sicherheitshalber alle Browser beenden. Weitere Infos finden Sie unter: https://support.metamask.io/ unter dem Stichwort: 'How-to-recover-your-Secret-Recovery-Phrase'. GovCracker Algorithmus: 26600-26620",
-    "MetaMaskSeed": "Wenn Sie über den Button 'MetaMask (Password)' die VaultJSON Datei extrahiert haben und das Passwort mit GovCracker entschlüsseln konnten, können Sie über die Homepage von MetaMask auf eigene Gefahr die Seed-Phrase für die Wallet entschlüsseln. Über den Button können Sie die Homepage aufrufen. \n\n "
+    "MetaMaskSeed": "Wenn Sie über den Button 'MetaMask (Password)' die VaultJSON Datei extrahiert haben und das Passwort mit GovCracker entschlüsseln konnten, können Sie über die Github-Seite von MetaMask auf eigene Gefahr die Seed-Phrase für die Wallet entschlüsseln. Über den Button können Sie die Homepage aufrufen. \n\n "
   },
   "WindowsLoginPassword": {
     "PathEmpty": "Der Pfad konnte nicht gefunden werden!"
