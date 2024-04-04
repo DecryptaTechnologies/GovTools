@@ -59,8 +59,9 @@ public class ItunesBackupIphoneExtractor : ExtractorBase,
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {
-        var perlFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Perl\Perl\bin\perl_govtools.exe");
-        var scriptFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\JtR\run\itunes_backup2john.pl");
+        //var perlFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Perl\Perl\bin\perl_govtools.exe");
+        //var scriptFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\JtR\run\itunes_backup2john.pl");
+        var scriptFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\GTP\iTB\iTunesBackup2hashcat.exe");
 
         var timestamp = $"{DateTime.Now:ddMMyy_HHmmssfff}";
         var relativePath = $@"_Hashout\iTunes_Extraction_{Path.GetFileNameWithoutExtension(filePath)}_{timestamp}.txt";
@@ -68,7 +69,7 @@ public class ItunesBackupIphoneExtractor : ExtractorBase,
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
 
-        sb.AppendLine($"call \"{perlFilePath}\" \"{scriptFilePath}\" \"{filePath}\" > \"{outputFilePath}\"");
+        sb.AppendLine($"call \"{scriptFilePath}\" \"{filePath}\" > \"{outputFilePath}\"");
 
         await File.WriteAllTextAsync(batFilePath, sb.ToString())
             .ConfigureAwait(false);

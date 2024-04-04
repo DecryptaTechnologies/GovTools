@@ -127,7 +127,9 @@
     "GovCracker": {
       "Name": "Chemin d'accès au 'GovCracker' dossier",
       "Description": "Si vous avez installé le logiciel 'GovCracker', vous pouvez enregistrer ici le chemin d'accès au dossier. Tous les résultats de GovTools sont alors automatiquement enregistrés dans les dossiers '_Hashout' et '_Wordlist'. dans le dossier GovCracker, afin que vous puissiez utiliser les résultats directement pour des attaques",
-      "GovCrackerFolderPath": "Veuillez indiquer le chemin d'accès à votre installation GovCracker dans les paramètres"
+      "GovCrackerFolderPath": "Veuillez indiquer le chemin d'accès à votre installation GovCracker dans les paramètres",
+      "GovCrackerFolderPathFailed": "Le chemin indiqué pour GovCracker.exe n'existe pas",
+      "GovCrackerExeNotFound": "Le chemin sélectionné ne contient pas de fichier GovCracker.exe"
     }
   }
 }

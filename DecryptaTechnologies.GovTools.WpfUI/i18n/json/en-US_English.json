@@ -127,7 +127,9 @@
     "GovCracker": {
       "Name": "Path to the \"GovCracker\" folder",
       "Description": "If you have installed the \"GovCracker\" software, you can enter the folder path here. All results from GovTools are then automatically saved in the \"_Hashout\" and \"_Wordlist\" folders in GovCracker so that you can use the results directly for attacks.",
-      "GovCrackerFolderPath": "Please set the path to your GovCracker installation in the settings."
+      "GovCrackerFolderPath": "Please set the path to your GovCracker installation in the settings.",
+      "GovCrackerFolderPathFailed": "The specified path to GovCracker.exe does not exist.",
+      "GovCrackerExeNotFound": "The selected path does not contain a GovCracker.exe file"
     }
   }
 }

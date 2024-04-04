@@ -72,8 +72,8 @@ public partial class GeneralSettingsSubCategoryViewModel : SettingsSubCategoryVi
         };
         vm.HandleFailedInputValidationFn = selectedFolderPath =>
         {
-            // TODO: simon translate
-            MessageBox.Show($"The selected path doesn't contain a GovCracker.exe file: '{selectedFolderPath}'", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            var msgText = $"{_translator.Translate("Settings.GovCracker.GovCrackerExeNotFound")}";
+            MessageBox.Show($"{msgText}: '{selectedFolderPath}'", "", MessageBoxButton.OK, MessageBoxImage.Information);
         };
         vm.Name = $"{_translator.Translate("Settings.GovCracker.Name")}";
         vm.Description = $"{_translator.Translate("Settings.GovCracker.Description")}";

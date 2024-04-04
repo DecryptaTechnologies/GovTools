@@ -37,8 +37,7 @@ public class GovCracker : IGovCracker
         if (!File.Exists(govCrackerFilePath))
         {
             _iniFile.SetString("General", "GovCrackerPath", "");
-            // TODO: simon translate
-            MessageBox.Show("The specified path to GovCracker.exe doesn't exist", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"{_translator.Translate("Settings.GovCracker.GovCrackerFolderPathFailed")}", "", MessageBoxButton.OK, MessageBoxImage.Information);
             return;
         }
 
