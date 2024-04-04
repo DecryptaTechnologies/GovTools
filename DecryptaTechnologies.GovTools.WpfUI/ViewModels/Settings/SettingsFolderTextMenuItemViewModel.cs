@@ -49,8 +49,8 @@ public partial class SettingsFolderTextMenuItemViewModel : SettingsMenuItemViewM
         ApplyFolderDialogParamsFn?.Invoke(ofd);
         if (ofd.ShowDialog() == true)
         {
-            var invalid = !ValidateInputFn?.Invoke(ofd.FolderName);
-            if (invalid == false)
+            var valid = ValidateInputFn?.Invoke(ofd.FolderName);
+            if (valid == false)
             {
                 HandleFailedInputValidationFn?.Invoke(ofd.FolderName);
                 return;
