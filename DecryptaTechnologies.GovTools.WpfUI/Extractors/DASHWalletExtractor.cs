@@ -12,8 +12,8 @@ using System.Text;
 
 namespace DecryptaTechnologies.GovTools.WpfUI.Extractors;
 
-[ExtractorType(ExtractorTypes.DASHWallet)]
-public class DASHWalletExtractor : ExtractorBase,
+[ExtractorType(ExtractorTypes.DashWallet)]
+public class DashWalletExtractor : ExtractorBase,
     ICanExtractHashesFromFileAsync,
     IFileSizeBiggerZeroHashOutputFileCheckerTrait
 {
@@ -29,7 +29,7 @@ public class DASHWalletExtractor : ExtractorBase,
 
     string _selectedFilePath;
 
-    public DASHWalletExtractor(
+    public DashWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
