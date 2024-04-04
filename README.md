@@ -2,7 +2,7 @@
 
 GovTools is an innovative open-source toolkit for Windows, designed to streamline the **extraction of password hashes** from a variety of targets. It acts as **helping hand** for **[GovCracker](https://govcracker.com)**, our **decryption software**. Both tools have been designed to support law enforcement agencies, universities, IT forensic based organizations and lawyers.
 
-Visit **[GovTools' documentation](https://govcracker.com)** to learn more.
+Visit **[GovTools' documentation](https://govcracker.com/govtools)** to learn more.
 
 
 ## Screenshots
