@@ -22,6 +22,8 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
 
     string _folderPath;
 
+    string _editOutputFilePath;
+
     public override string Name => "Windows Login Password";
 
     public override string? ImageUrl => "/Resources/extractor-windows-login-password.png";
@@ -34,6 +36,7 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
     {
         _dialogService = dialogService;
         _folderPath = "";
+        _editOutputFilePath = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -87,16 +90,20 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
         await process.WaitForExitAsync()
             .ConfigureAwait(false);
 
-        if (await ((ICanCheckHashOutputFileAsync)this)
-            .CheckHashOutputFileAsync(outputFilePath)
-            .ConfigureAwait(false) == false)
-            return false;
+        await Task.Delay(500)
+            .ConfigureAwait(false);
+
+        _editOutputFilePath = Path.Combine(AppContext.BaseDirectory, @$"_Hashout\WinLogin_Extraction_HashFile_{timestamp}.txt");
+        await PostProcessHashOutputFileAsync(outputFilePath)
+            .ConfigureAwait(false);
 
         await Task.Delay(500)
             .ConfigureAwait(false);
 
-        await PostProcessHashOutputFileAsync(outputFilePath)
-            .ConfigureAwait(false);
+        if (await ((ICanCheckHashOutputFileAsync)this)
+            .CheckHashOutputFileAsync(_editOutputFilePath)
+            .ConfigureAwait(false) == false)
+            return false;
 
         return true;
     }
@@ -122,9 +129,7 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
         await Task.Delay(500)
             .ConfigureAwait(false);
 
-        var timestamp = $"{DateTime.Now:ddMMyy_HHmmssfff}";
-        var editOutputFilePath = Path.Combine(AppContext.BaseDirectory, @$"_Hashout\WinLogin_Extraction_HashFile_{timestamp}.txt");
-        await File.WriteAllLinesAsync(editOutputFilePath, list)
+        await File.WriteAllLinesAsync(_editOutputFilePath, list)
             .ConfigureAwait(false);
 
         return true;

@@ -97,6 +97,12 @@ public class WinHelloExtractor : ExtractorBase,
                 return false;
             }
             await _process.WaitForExitAsync();
+
+            if (await ((ICanCheckHashOutputFileAsync)this)
+                .CheckHashOutputFileAsync(outputFilePath)
+                .ConfigureAwait(false) == false)
+                return false;
+
             return true;
         }
         else
@@ -116,7 +122,6 @@ public class WinHelloExtractor : ExtractorBase,
             {
                 StartInfo = new ProcessStartInfo()
                 {
-
                     FileName = "cmd.exe",
                     UseShellExecute = true,
                     WindowStyle = ProcessWindowStyle.Minimized,
@@ -135,6 +140,12 @@ public class WinHelloExtractor : ExtractorBase,
                 return false;
             }
             await _process.WaitForExitAsync();
+
+            if (await ((ICanCheckHashOutputFileAsync)this)
+                .CheckHashOutputFileAsync(outputFilePath)
+                .ConfigureAwait(false) == false)
+                return false;
+
             return true;
 
         }
