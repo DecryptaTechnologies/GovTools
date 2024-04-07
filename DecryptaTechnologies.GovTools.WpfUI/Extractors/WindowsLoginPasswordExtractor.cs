@@ -64,9 +64,8 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
         var sysFolderPath = Path.Combine(_folderPath, "SYSTEM");
         var secFolderPath = Path.Combine(_folderPath, "SECURITY");
 
-        var pp2ExeFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Py2\App\Python\PP2.exe");
-        var secretsDumpFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\SD\secretsdump.py");
-        var batFileContents = $"call \"{pp2ExeFilePath}\" \"{secretsDumpFilePath}\" -sam \"{samFolderPath}\" -system \"{sysFolderPath}\" -security \"{secFolderPath}\" local > \"{outputFilePath}\"";
+        var secretsDumpFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\SD\secretsdump.exe");
+        var batFileContents = $"call \"{secretsDumpFilePath}\" -sam \"{samFolderPath}\" -system \"{sysFolderPath}\" -security \"{secFolderPath}\" local > \"{outputFilePath}\"";
         await File.WriteAllTextAsync(batFilePath, batFileContents)
             .ConfigureAwait(false);
 

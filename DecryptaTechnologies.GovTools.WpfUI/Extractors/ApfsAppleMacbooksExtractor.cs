@@ -29,7 +29,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.APFS")}";
 
-    public override string Name => "APFS (Apple MacBooks)";
+    public override string Name => "APFS (MacBooks / iMacs)";
 
     public ApfsAppleMacbooksExtractor(
         IWindowsService windowsService,
