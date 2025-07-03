@@ -67,10 +67,11 @@ public class LinuxUnifiedKeySystemLUKSExtractor : ExtractorBase,
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
 
+        sb.AppendLine("chcp 65001");
         // sb.AppendLine($"call \"{dd2FilePath}\" if=\"{filePath}\" of=\"{outputFilePath}\" bs=512 count=4097");
         sb.AppendLine($"call \"{py3FilePath}\" \"{scriptFilePath}\" \"{filePath}\" > \"{outputFilePath}\"");
 
-        await File.WriteAllTextAsync(batFilePath, sb.ToString())
+        await File.WriteAllTextAsync(batFilePath, sb.ToString(), new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)

@@ -47,6 +47,7 @@ public abstract class ExtractorBase : IExtractor
             return govCrackerPath;
     }
 
+
     public virtual void Stop()
     {
         // NO-OP

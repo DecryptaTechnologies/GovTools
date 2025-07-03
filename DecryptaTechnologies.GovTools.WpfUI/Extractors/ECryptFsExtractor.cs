@@ -60,9 +60,10 @@ public class ECryptFsExtractor : ExtractorBase
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
 
+        sb.AppendLine("chcp 65001");
         sb.AppendLine($"call \"{py3FilePath}\" \"{scriptFilePath}\" \"{_selectedFile}\" > \"{outputFilePath}\"");
 
-        await File.WriteAllTextAsync(batFilePath, sb.ToString())
+        await File.WriteAllTextAsync(batFilePath, sb.ToString(), new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)

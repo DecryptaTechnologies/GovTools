@@ -87,9 +87,10 @@ public class ZipExtractor : ExtractorBase,
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
 
+        sb.AppendLine("chcp 65001");
         sb.AppendLine($"call \"{exeFilePath}\" \"{filePath}\" > \"{outputFilePath}\"");
 
-        await File.WriteAllTextAsync(batFilePath, sb.ToString())
+        await File.WriteAllTextAsync(batFilePath, sb.ToString(), new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)
@@ -137,7 +138,7 @@ public class ZipExtractor : ExtractorBase,
         await Task.Delay(500)
             .ConfigureAwait(false);
 
-        await File.WriteAllTextAsync(filePath, results)
+        await File.WriteAllTextAsync(filePath, results, new UTF8Encoding(false))
             .ConfigureAwait(false);
     }
 

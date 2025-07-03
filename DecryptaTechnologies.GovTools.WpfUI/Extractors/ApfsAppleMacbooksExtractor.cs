@@ -79,7 +79,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
         var outputFilePath = Path.Combine(buildOutputDirectory, fileName);
 
         var cmd = $"#!/bin/bash{nl}sudo -s apt update && sudo apt install fuse libfuse3-dev bzip2 libbz2-dev cmake g++ git libattr1-dev zlib1g-dev && cd apfs2hashcat && cd build && ./apfs-dump-quick /mnt/\"{ubuntuSafePath}\" {fileName}{nl}read -rsn 1 -p 'Press any key to continue . . . ';echo";
-        await File.WriteAllTextAsync(apfsShellFilePath, cmd)
+        await File.WriteAllTextAsync(apfsShellFilePath, cmd, new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         var ubuntuFileNameToRun = "ubuntu2004.exe";

@@ -3,8 +3,10 @@ using DecryptaTechnologies.GovTools.Domain.Contracts;
 using DecryptaTechnologies.GovTools.WpfUI.ViewModels;
 using rskibbe.I18n.Contracts;
 using rskibbe.Ini.Contracts;
+using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 
@@ -65,10 +67,13 @@ public class WinHelloExtractor : ExtractorBase,
         {
             // LIVE
             var sb = new StringBuilder();
+            sb.AppendLine("chcp 65001");
+            sb.AppendLine(@"TAKEOWN /f %windir%\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc /r /a < nul");
+            sb.AppendLine(@"ICACLS %windir%\ServiceProfiles\LocalService\AppData\Local\Microsoft\Ngc /grant ""%username%"":(F) /t");
             sb.AppendLine($"call reg.exe save hklm\\system \"{tempSysPath}\" /y & reg.exe save hklm\\security \"{tempSecPath}\" /y");
             sb.AppendLine($"call \"{py3FilePath}\" \"{winhelloScriptFilePath}\" {cryptoPath}");
 
-            await File.WriteAllTextAsync(batchFilePath, sb.ToString())
+            await File.WriteAllTextAsync(batchFilePath, sb.ToString(), new UTF8Encoding(false))
                 .ConfigureAwait(false);
 
             await Task.Delay(3000)
@@ -110,9 +115,11 @@ public class WinHelloExtractor : ExtractorBase,
             // OFFLINE
             var cryptoPathOffline = $"--cryptokeys \"{_folderPath}\\ServiceProfiles\\LocalService\\AppData\\Roaming\\Microsoft\\Crypto\\Keys\" --masterkey \"{_folderPath}\\System32\\Microsoft\\Protect\\S-1-5-18\\User\" --system \"{_folderPath}\\System32\\config\\SYSTEM\" --security \"{_folderPath}\\System32\\config\\SECURITY\" --ngc \"{_folderPath}\\ServiceProfiles\\LocalService\\AppData\\Local\\Microsoft\\Ngc\" > \"{outputFilePath}\"";
             var sb = new StringBuilder();
+            
+            sb.AppendLine("chcp 65001");
             sb.AppendLine($"call \"{py3FilePath}\" \"{winhelloScriptFilePath}\" {cryptoPathOffline}");
 
-            await File.WriteAllTextAsync(batchFilePath, sb.ToString())
+            await File.WriteAllTextAsync(batchFilePath, sb.ToString(), new UTF8Encoding(false))
                 .ConfigureAwait(false);
 
             await Task.Delay(3000)

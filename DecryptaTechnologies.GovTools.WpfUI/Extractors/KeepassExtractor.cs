@@ -90,13 +90,14 @@ public class KeepassExtractor : ExtractorBase,
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
 
+        sb.AppendLine("chcp 65001");
         var dynamicPart = "";
         var keyfileProvided = !string.IsNullOrEmpty(_optionalKeyFilePath);
         if (keyfileProvided)
             dynamicPart = $"-k \"{_optionalKeyFilePath}\" ";
         sb.AppendLine($"call \"{keepassExtractorFilePath}\" {dynamicPart}\"{_databaseFilePath}\" > \"{outputFilePath}\"");
 
-        await File.WriteAllTextAsync(batFilePath, sb.ToString())
+        await File.WriteAllTextAsync(batFilePath, sb.ToString(), new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)

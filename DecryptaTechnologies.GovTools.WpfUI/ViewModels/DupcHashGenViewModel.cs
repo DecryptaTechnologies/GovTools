@@ -172,7 +172,7 @@ public partial class DupcHashGenViewModel : ScreenViewModelBase
         if (string.IsNullOrEmpty(Hash))
             return;
         var outputFilePath = Path.Combine(GetHashoutDirectory(), $"Hash_{SelectedHashAlgorithmItem}_{DateTime.Now:yyyyMMdd_HHmmssfff}.txt");
-        await File.WriteAllTextAsync(outputFilePath, Hash);
+        await File.WriteAllTextAsync(outputFilePath, Hash, new UTF8Encoding(false));
     }
 
     [RelayCommand]
