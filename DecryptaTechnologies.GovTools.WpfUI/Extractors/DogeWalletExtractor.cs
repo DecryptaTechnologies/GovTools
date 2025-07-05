@@ -26,15 +26,14 @@ public class DogeWalletExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.Dogecoin")}";
 
-
-    string _selectedFile;
+    public string SelectedFile { get; set; }
 
     public DogeWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFile = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -49,14 +48,14 @@ public class DogeWalletExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFile = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => fileName.ToLower().EndsWith("wallet.dat");
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFile);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

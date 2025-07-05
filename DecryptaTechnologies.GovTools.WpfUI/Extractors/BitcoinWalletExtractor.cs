@@ -26,14 +26,14 @@ public class BitcoinWalletExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.Bitcoin")}";
 
-    string _selectedFilePath;
+    public string SelectedFile { get; set; }
 
     public BitcoinWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFilePath = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -48,14 +48,14 @@ public class BitcoinWalletExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFilePath = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => fileName.ToLower().EndsWith("wallet.dat");
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFilePath);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

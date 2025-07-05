@@ -26,14 +26,14 @@ public class MetaMaskWalletExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.MetaMask")}";
 
-    string _selectedFilePath;
+    public string SelectedFolder { get; set; }
 
     public MetaMaskWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFilePath = "";
+        SelectedFolder = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -49,7 +49,7 @@ public class MetaMaskWalletExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFilePath = e.Value;
+        SelectedFolder = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
@@ -57,7 +57,7 @@ public class MetaMaskWalletExtractor : ExtractorBase,
 
     public override Task<bool?> RunAsync()
     {
-        var selectedFolderPath = Path.GetDirectoryName(_selectedFilePath);
+        var selectedFolderPath = Path.GetDirectoryName(SelectedFolder);
         if (string.IsNullOrEmpty(selectedFolderPath))
             return Task.FromResult((bool?)false);
         return ExtractHashesFromFolderAsync(selectedFolderPath);

@@ -41,7 +41,7 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
     }
 
     [RelayCommand]
-    public void SelectFile()
+    private void SelectFile()
     {
         var ofd = new OpenFileDialog();
         ofd.Filter = Filter;
@@ -49,6 +49,7 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
         var result = ofd.ShowDialog();
         if (result != true)
             return;
+        SelectedFolder = "";
         SelectedFile = ofd.FileName;
         OnFileSelected(new StringEventArgs(ofd.FileName));
         OnCompleted(EventArgs.Empty);
@@ -60,13 +61,14 @@ public partial class FolderOrFileExtractorStepViewModel : ExtractorStepBaseViewM
     }
 
     [RelayCommand]
-    public void SelectFolder()
+    private void SelectFolder()
     {
         var ofd = new OpenFolderDialog();
         ofd.InitialDirectory = string.IsNullOrEmpty(InitialDirectory) ? AppContext.BaseDirectory : InitialDirectory;
         var result = ofd.ShowDialog();
         if (result != true)
             return;
+        SelectedFile = "";
         SelectedFolder = ofd.FolderName;
         OnFolderSelected(new StringEventArgs(ofd.FolderName));
         OnCompleted(EventArgs.Empty);

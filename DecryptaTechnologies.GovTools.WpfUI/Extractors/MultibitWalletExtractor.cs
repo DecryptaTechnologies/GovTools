@@ -27,15 +27,14 @@ public class MultiBitWalletExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.Multibit")}";
 
-
-    string _selectedFile;
+    public string SelectedFile { get; set; }
 
     public MultiBitWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFile = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -50,14 +49,14 @@ public class MultiBitWalletExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFile = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => fileName.ToLower().EndsWith("mbhd.wallet.aes");
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFile);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

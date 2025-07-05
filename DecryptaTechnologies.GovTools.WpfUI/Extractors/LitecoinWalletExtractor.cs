@@ -26,15 +26,14 @@ public class LitecoinWalletExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.Litecoin")}";
 
-
-    string _selectedFilePath;
+    public string SelectedFile { get; set; }
 
     public LitecoinWalletExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFilePath = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -49,14 +48,14 @@ public class LitecoinWalletExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFilePath = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => fileName.ToLower().EndsWith("wallet.dat");
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFilePath);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

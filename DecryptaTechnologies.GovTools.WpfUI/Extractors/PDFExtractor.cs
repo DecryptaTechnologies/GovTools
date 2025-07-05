@@ -27,17 +27,17 @@ public class PDFExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.PDF")}";
 
-    string _selectedFileOrFolder;
+    public string SelectedFile { get; set; }
 
-    bool _isFileMode;
+    public string SelectedFolder { get; set; }
 
     public PDFExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFileOrFolder = "";
-        _isFileMode = true;
+        SelectedFile = "";
+        SelectedFolder = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -55,14 +55,14 @@ public class PDFExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFileOrFolder = e.Value;
-        _isFileMode = true;
+        SelectedFolder = "";
+        SelectedFile = e.Value;
     }
 
     private void This_FolderSelected(object? sender, StringEventArgs e)
     {
-        _selectedFileOrFolder = e.Value;
-        _isFileMode = false;
+        SelectedFile = "";
+        SelectedFolder = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
@@ -70,9 +70,9 @@ public class PDFExtractor : ExtractorBase,
 
     public override Task<bool?> RunAsync()
     {
-        if (_isFileMode)
-            return ExtractHashesFromFileAsync(_selectedFileOrFolder);
-        return ExtractHashesFromFolderAsync(_selectedFileOrFolder);
+        if (!string.IsNullOrWhiteSpace(SelectedFile))
+            return ExtractHashesFromFileAsync(SelectedFile);
+        return ExtractHashesFromFolderAsync(SelectedFolder);
     }
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)

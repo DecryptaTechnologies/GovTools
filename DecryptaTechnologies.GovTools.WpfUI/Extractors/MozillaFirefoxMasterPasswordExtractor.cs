@@ -26,15 +26,14 @@ public class MozillaFirefoxMasterPasswordExtractor : ExtractorBase,
 
     public override string Hint => $"{_translator.Translate("Extractors.Firefox")}";
 
-
-    string _selectedFile;
+    public string SelectedFile { get; set; }
 
     public MozillaFirefoxMasterPasswordExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFile = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -50,14 +49,14 @@ public class MozillaFirefoxMasterPasswordExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFile = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => fileName.ToLower().EndsWith(".db");
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFile);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

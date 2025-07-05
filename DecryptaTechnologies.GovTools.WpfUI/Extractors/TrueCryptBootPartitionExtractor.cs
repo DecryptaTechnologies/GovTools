@@ -27,14 +27,14 @@ public class TrueCryptBootPartitionExtractor : ExtractorBase,
     public override string Hint => $"{_translator.Translate("Extractors.TrueCryptBoot")}";
 
 
-    string _selectedFilePath;
+    public string SelectedFile { get; set; }
 
     public TrueCryptBootPartitionExtractor(
         IIniFile iniFile,
         ITranslator translator
     ) : base(iniFile, translator)
     {
-        _selectedFilePath = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -48,14 +48,14 @@ public class TrueCryptBootPartitionExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _selectedFilePath = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => true;
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_selectedFilePath);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {

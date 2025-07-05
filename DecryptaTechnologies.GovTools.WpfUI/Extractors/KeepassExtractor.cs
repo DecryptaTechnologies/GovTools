@@ -23,7 +23,7 @@ public class KeepassExtractor : ExtractorBase,
 
     string _optionalKeyFilePath;
 
-    string _databaseFilePath;
+    public string SelectedFile { get; set; }
 
     public override string? ImageUrl => "/Resources/extractor-keepass.png";
 
@@ -37,7 +37,7 @@ public class KeepassExtractor : ExtractorBase,
     ) : base(iniFile, translator)
     {
         _optionalKeyFilePath = "";
-        _databaseFilePath = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -64,7 +64,7 @@ public class KeepassExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _databaseFilePath = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
@@ -74,11 +74,11 @@ public class KeepassExtractor : ExtractorBase,
     {
         base.Reset();
         _optionalKeyFilePath = "";
-        _databaseFilePath = "";
+        SelectedFile = "";
     }
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_databaseFilePath);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {
@@ -94,7 +94,7 @@ public class KeepassExtractor : ExtractorBase,
         var keyfileProvided = !string.IsNullOrEmpty(_optionalKeyFilePath);
         if (keyfileProvided)
             dynamicPart = $"-k \"{_optionalKeyFilePath}\" ";
-        sb.AppendLine($"call \"{keepassExtractorFilePath}\" {dynamicPart}\"{_databaseFilePath}\" > \"{outputFilePath}\"");
+        sb.AppendLine($"call \"{keepassExtractorFilePath}\" {dynamicPart}\"{SelectedFile}\" > \"{outputFilePath}\"");
 
         await File.WriteAllTextAsync(batFilePath, sb.ToString())
             .ConfigureAwait(false);

@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using DecryptaTechnologies.GovTools.Domain.Contracts;
 using DecryptaTechnologies.GovTools.WpfUI.Utils;
+using System.Windows;
 
 namespace DecryptaTechnologies.GovTools.WpfUI.ViewModels;
 
@@ -48,6 +49,8 @@ public partial class ExtractorDetailViewModel : HostScreenViewModelBase
             return;
         }
 
+        WarnOnFileOrFolderNotAsciiName();
+
         await ShowExtractorRunningScreenAsync();
 
         var extractorResult = await SelectedExtractor.RunAsync();
@@ -75,6 +78,28 @@ public partial class ExtractorDetailViewModel : HostScreenViewModelBase
         }
         extractorCompletedViewModel.BackToFirstExtractorScreenRequequested += BackToFirstExtractorScreenRequequested;
         await SwitchScreenAsync(extractorCompletedViewModel);
+    }
+
+    private void WarnOnFileOrFolderNotAsciiName()
+    {
+        if (SelectedExtractor is ICanExtractHashesFromFileAsync fileExtractor && !string.IsNullOrWhiteSpace(fileExtractor.SelectedFile))
+        {
+            var isFileNameOutsideAsciiRange = fileExtractor.SelectedFile.Any(c => c > 127);
+            if (isFileNameOutsideAsciiRange)
+            {
+                // TODO: translate
+                MessageBox.Show("Filenames containing non-ASCII letters can raise errors during extraction", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+        else if (SelectedExtractor is ICanExtractHashesFromFolderAsync folderExtractor && !string.IsNullOrWhiteSpace(folderExtractor.SelectedFolder))
+        {
+            var isFolderNameOutsideAsciiRange = folderExtractor.SelectedFolder.Any(c => c > 127);
+            if (isFolderNameOutsideAsciiRange)
+            {
+                // TODO: translate
+                MessageBox.Show("Foldernames containing non-ASCII letters can raise errors during extraction", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
     }
 
     private async Task ShowNextScreenAsync()

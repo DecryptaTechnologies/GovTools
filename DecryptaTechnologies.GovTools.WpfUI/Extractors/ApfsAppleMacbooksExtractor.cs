@@ -23,7 +23,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
 
     protected Process? _process;
 
-    string _imageFilePath;
+    public string SelectedFile { get; set; }
 
     public override string? ImageUrl => "/Resources/extractor-apfs.png";
 
@@ -38,7 +38,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
     ) : base(iniFile, translator)
     {
         _windowsService = windowsService;
-        _imageFilePath = "";
+        SelectedFile = "";
     }
 
     public override List<IExtractorStepViewModel> GetRequiredScreens()
@@ -55,14 +55,14 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
 
     private void This_FileSelected(object? sender, StringEventArgs e)
     {
-        _imageFilePath = e.Value;
+        SelectedFile = e.Value;
     }
 
     public bool SupportsFileName(string fileName)
         => true;
 
     public override Task<bool?> RunAsync()
-        => ExtractHashesFromFileAsync(_imageFilePath);
+        => ExtractHashesFromFileAsync(SelectedFile);
 
     public async Task<bool?> ExtractHashesFromFileAsync(string filePath)
     {
@@ -70,7 +70,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
         var apfsShellFilePath = Path.Combine(apfsFolder, "apfs.sh");
 
         var nl = Environment.NewLine;
-        var ubuntuSafePath = $"{_imageFilePath[..2].ToLower()}{_imageFilePath[2..]}"
+        var ubuntuSafePath = $"{SelectedFile[..2].ToLower()}{SelectedFile[2..]}"
             .Replace("\\", "/")
             .Replace(":", "");
 
@@ -205,7 +205,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
         }
 
         var timestamp = $"{DateTime.Now:ddMMyy_HHmmssfff}";
-        var relativePath = @$"_Hashout\APFS_Extraction_Hash_{Path.GetFileNameWithoutExtension(_imageFilePath)}_{timestamp}.txt";
+        var relativePath = @$"_Hashout\APFS_Extraction_Hash_{Path.GetFileNameWithoutExtension(SelectedFile)}_{timestamp}.txt";
         var outputFilePath = Path.Combine(GetHashoutDirectory(), relativePath);
 
         await File
@@ -213,7 +213,7 @@ public class ApfsAppleMacbooksExtractor : ExtractorBase,
             .ConfigureAwait(false);
 
         timestamp = $"{DateTime.Now:ddMMyy_HHmmssfff}";
-        relativePath = @$"_Hashout\APFS_Rawfile_UUID_{Path.GetFileNameWithoutExtension(_imageFilePath)}_{timestamp}.txt";
+        relativePath = @$"_Hashout\APFS_Rawfile_UUID_{Path.GetFileNameWithoutExtension(SelectedFile)}_{timestamp}.txt";
         outputFilePath = Path.Combine(GetHashoutDirectory(), relativePath);
 
         await File
