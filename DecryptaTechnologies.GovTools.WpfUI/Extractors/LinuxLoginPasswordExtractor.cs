@@ -8,6 +8,7 @@ using rskibbe.I18n.Contracts;
 using rskibbe.Ini.Contracts;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace DecryptaTechnologies.GovTools.WpfUI.Extractors;
 
@@ -66,7 +67,7 @@ public class LinuxLoginPasswordExtractor : ExtractorBase
 
         var timestamp = $"{DateTime.Now:ddMMyy_HHmmssfff}";
         var editOutputFilePath = Path.Combine(GetHashoutDirectory(), @$"_Hashout\LinuxLogin_Extraction_HashFile_{timestamp}.txt");
-        await File.WriteAllLinesAsync(editOutputFilePath, userHashes)
+        await File.WriteAllLinesAsync(editOutputFilePath, userHashes, new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         return true;

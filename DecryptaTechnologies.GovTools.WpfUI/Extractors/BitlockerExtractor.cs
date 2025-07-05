@@ -71,6 +71,7 @@ public class BitlockerExtractor : ExtractorBase,
 
         var batFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\Temp\Extraction.bat");
         var sb = new StringBuilder();
+        sb.AppendLine("chcp 65001");
         sb.AppendLine("echo off");
         sb.AppendLine($"Set LOGFILE=\"{outputFilePath}\"");
         sb.AppendLine("Call :LOG > %LOGFILE%");
@@ -79,7 +80,7 @@ public class BitlockerExtractor : ExtractorBase,
         sb.AppendLine();
         sb.AppendLine(":LOG");
         sb.AppendLine($"Call \"{bitlockerExePath}\" -i \"{filePath}\"");
-        await File.WriteAllTextAsync(batFilePath, sb.ToString())
+        await File.WriteAllTextAsync(batFilePath, sb.ToString(), new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)

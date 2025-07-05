@@ -111,7 +111,8 @@ public partial class CombiLenViewModel : ScreenViewModelBase
         }
 
         IsCombinating = true;
-        var targetFile = Path.Combine(AppContext.BaseDirectory, $@"_Wordlists\Combinator_{DateTime.Now:yyyyMMdd_HHmmss}.txt");
+        // var targetFile = Path.Combine(AppContext.BaseDirectory, $@"_Wordlists\Combinator_{DateTime.Now:yyyyMMdd_HHmmss}.txt");
+        var targetFile = Path.Combine(GetWordlistsDirectory(), $@"Combinator_{DateTime.Now:yyyyMMdd_HHmmss}.txt");
 
         var escapedNonEmptyWordlistFilePaths = nonEmptyWordlistFilePaths
             .Select(x => $"\"{x}\"");

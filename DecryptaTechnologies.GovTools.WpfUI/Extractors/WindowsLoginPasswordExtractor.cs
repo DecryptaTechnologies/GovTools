@@ -9,6 +9,7 @@ using rskibbe.I18n.Contracts;
 using rskibbe.Ini.Contracts;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace DecryptaTechnologies.GovTools.WpfUI.Extractors;
 
@@ -69,7 +70,7 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
 
         var secretsDumpFilePath = Path.Combine(AppContext.BaseDirectory, @"Packages\SD\secretsdump.exe");
         var batFileContents = $"call \"{secretsDumpFilePath}\" -sam \"{samFolderPath}\" -system \"{sysFolderPath}\" -security \"{secFolderPath}\" local > \"{outputFilePath}\"";
-        await File.WriteAllTextAsync(batFilePath, batFileContents)
+        await File.WriteAllTextAsync(batFilePath, batFileContents, new UTF8Encoding(false))
             .ConfigureAwait(false);
 
         await Task.Delay(1000)
@@ -93,7 +94,7 @@ public class WindowsLoginPasswordExtractor : ExtractorBase,
         await Task.Delay(500)
             .ConfigureAwait(false);
 
-        _editOutputFilePath = Path.Combine(AppContext.BaseDirectory, @$"_Hashout\WinLogin_Extraction_HashFile_{timestamp}.txt");
+        _editOutputFilePath = Path.Combine(GetHashoutDirectory(), @$"_Hashout\WinLogin_Extraction_HashFile_{timestamp}.txt");
         await PostProcessHashOutputFileAsync(outputFilePath)
             .ConfigureAwait(false);
 
